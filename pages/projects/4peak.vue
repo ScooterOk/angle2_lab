@@ -4,28 +4,35 @@
       <nuxt-link to="/projects">
         <b>
           <span>all projects</span>
-        </b>        
+        </b>
         <i></i>
-      </nuxt-link>      
+      </nuxt-link>
     </div>
     <article class="case 4peak">
       <section class="case__head">
-        <div class="case__head_img" data-displacement="/lab/img/displacement/pattern2.png" data-intensity="-0.65" data-speedIn="1" data-speedOut="1" data-startImage="/lab/img/displacement/start.png">
-          <img src="/lab/img/projects/4peak/preview.jpg" alt="">          
+        <div
+          class="case__head_img"
+          data-displacement="/img/displacement/pattern2.png"
+          data-intensity="-0.65"
+          data-speedIn="1"
+          data-speedOut="1"
+          data-startImage="/img/displacement/start.png"
+        >
+          <img src="/img/projects/4peak/preview.jpg" alt="" />
         </div>
         <ul class="case__head_title">
           <li>
-            <div class="left">            
+            <div class="left">
               <h2>
-                <span>4peak</span>                
-              </h2>          
+                <span>4peak</span>
+              </h2>
             </div>
             <div class="right">
-              <h2>                
-                <span>4peak</span>                
+              <h2>
+                <span>4peak</span>
               </h2>
-            </div>            
-          </li>          
+            </div>
+          </li>
         </ul>
         <div class="case__head_characteristic">
           <div class="output">
@@ -55,22 +62,22 @@
       </section>
       <div class="wrapper">
         <!-- <div class="bg-absolute">
-          <img src="/lab/img/projects/4peak/part-3.jpg" alt>
+          <img src="/img/projects/4peak/part-3.jpg" alt>
         </div>-->
         <div class="content-box leave">
           <div class="bg-absolute startanim" data-bg="mainHeadingImg">
-            <img src="/lab/img/projects/4peak/bg-management.jpg" alt>
+            <img src="/img/projects/4peak/bg-management.jpg" alt />
           </div>
           <div class="contr contr--with-padding contr--no-r-padding">
             <h2 class="main-heading startanim" data-type="mainHeading">
               <span>MANAGEMENT SYSTEM</span>
-              <br>
+              <br />
               <span class="font-weight-normal">FOR SKI RESORTS</span>
             </h2>
           </div>
           <div class="contr startanim" data-type="mainHeadingImg">
             <div class="pic-full-width imganim">
-              <img src="/lab/img/projects/4peak/management.png" alt>
+              <img src="/img/projects/4peak/management.png" alt />
             </div>
           </div>
         </div>
@@ -80,20 +87,40 @@
               <div class="content__block content__block--center">
                 <h3 class="content__title">About the project</h3>
                 <div class="content__descr">
-                  <p>4Peak is a management system for ski resorts (lifts schedules, etc.) and its marketing campaigns. Data for analysis is collected from the mobile application, which users use for check-ins, rankings and lifts schedule. Also, users receive useful information about working hours of different objects in the resort and beneficial marketing offers.</p>
+                  <p>
+                    4Peak is a management system for ski resorts (lifts
+                    schedules, etc.) and its marketing campaigns. Data for
+                    analysis is collected from the mobile application, which
+                    users use for check-ins, rankings and lifts schedule. Also,
+                    users receive useful information about working hours of
+                    different objects in the resort and beneficial marketing
+                    offers.
+                  </p>
                   <ul class="stat-list">
                     <li class="stat__item">
-                      <img src="/lab/img/projects/4peak/icon-reports.svg" alt class="stat__icon">
+                      <img
+                        src="/img/projects/4peak/icon-reports.svg"
+                        alt
+                        class="stat__icon"
+                      />
                       <span class="stat__numb">32</span>
                       <h6 class="stat__caption">resorts</h6>
                     </li>
                     <li class="stat__item">
-                      <img src="/lab/img/projects/4peak/icon-countries.svg" alt class="stat__icon">
+                      <img
+                        src="/img/projects/4peak/icon-countries.svg"
+                        alt
+                        class="stat__icon"
+                      />
                       <span class="stat__numb">5</span>
                       <h6 class="stat__caption">countries</h6>
                     </li>
                     <li class="stat__item">
-                      <img src="/lab/img/projects/4peak/icon-check.svg" alt class="stat__icon">
+                      <img
+                        src="/img/projects/4peak/icon-check.svg"
+                        alt
+                        class="stat__icon"
+                      />
                       <span class="stat__numb">10k</span>
                       <h6 class="stat__caption">check-ins per month</h6>
                     </li>
@@ -105,7 +132,7 @@
         </section>
         <div class="content-box problem leave">
           <div class="bg-absolute h-auto startanim" data-bg="problemImg">
-            <img src="/lab/img/projects/4peak/bg-snowboardist.jpg" alt>
+            <img src="/img/projects/4peak/bg-snowboardist.jpg" alt />
           </div>
           <section class="section">
             <div class="contr contr--with-padding">
@@ -113,51 +140,73 @@
                 <h5 class="section-caption-vertical">old version</h5>
                 <div class="col-narrow col-mid startanim" data-type="problem">
                   <div class="imganim">
-                    <img src="/lab/img/projects/4peak/old-version.jpg" alt class="j">
-                    </div>
+                    <img
+                      src="/img/projects/4peak/old-version.jpg"
+                      alt
+                      class="j"
+                    />
+                  </div>
                 </div>
                 <div class="content__block startanim">
                   <h3 class="content__title">The problem</h3>
                   <div class="content__descr">
                     <p>
-                      The owner of software for ski resorts addressed us for the improvement of usability of the dashboard. We were requested to identify the problems of usability, update the structure, refine the functionality, modernize. Make it more convenient for each persona.
-                      The first version of the project was made by the client itself without the involvement of proper UX and UI specialists. No wonder the system had lots of critical drawbacks.
+                      The owner of software for ski resorts addressed us for the
+                      improvement of usability of the dashboard. We were
+                      requested to identify the problems of usability, update
+                      the structure, refine the functionality, modernize. Make
+                      it more convenient for each persona. The first version of
+                      the project was made by the client itself without the
+                      involvement of proper UX and UI specialists. No wonder the
+                      system had lots of critical drawbacks.
                     </p>
                   </div>
                 </div>
               </div>
-              <div class="pic-full-width startanim imganim" data-type="feedbacks">
-                <img src="/lab/img/projects/4peak/feedbacks.png" alt>
+              <div
+                class="pic-full-width startanim imganim"
+                data-type="feedbacks"
+              >
+                <img src="/img/projects/4peak/feedbacks.png" alt />
               </div>
             </div>
           </section>
         </div>
         <div class="lines leave">
           <div class="pic-full-width imganim">
-            <img src="/lab/img/projects/4peak/lines.svg" alt>
+            <img src="/img/projects/4peak/lines.svg" alt />
           </div>
         </div>
         <div class="content-box content-box--wireframes leave">
           <div class="contr contr--with-padding contr--no-r-padding">
             <div class="row">
               <h5 class="section-caption-vertical">New wireframes</h5>
-              <div class="pic-full-width startanim imganim" data-type="wireframes">
-                <img src="/lab/img/projects/4peak/wireframes.jpg" alt>
+              <div
+                class="pic-full-width startanim imganim"
+                data-type="wireframes"
+              >
+                <img src="/img/projects/4peak/wireframes.jpg" alt />
               </div>
             </div>
           </div>
         </div>
         <article class="article article--design leave">
           <div class="bg-absolute">
-            <img src="/lab/img/projects/4peak/bg-mask.jpg" alt>
+            <img src="/img/projects/4peak/bg-mask.jpg" alt />
           </div>
           <div class="contr contr--with-padding contr--no-r-padding">
-            <h2 class="article__title startanim" data-type="design">Design Solutions and New UI</h2>
+            <h2 class="article__title startanim" data-type="design">
+              Design Solutions and New UI
+            </h2>
             <div class="article__descr startanim">
               <div class="content__block">
                 <h3 class="content__title">User management</h3>
                 <div class="content__descr">
-                  <p>User management was barely possible. User's profile was a popup, without URL. We designed it as a separate page, for users list were added search and management options.</p>
+                  <p>
+                    User management was barely possible. User's profile was a
+                    popup, without URL. We designed it as a separate page, for
+                    users list were added search and management options.
+                  </p>
                 </div>
               </div>
             </div>
@@ -165,7 +214,7 @@
               <div class="row">
                 <h5 class="section-caption-vertical">All Users</h5>
                 <div class="pic-full-width imganim" data-img="designImg">
-                  <img src="/lab/img/projects/4peak/all-users.jpg" alt>
+                  <img src="/img/projects/4peak/all-users.jpg" alt />
                 </div>
               </div>
             </section>
@@ -174,8 +223,11 @@
             <section class="section-picture">
               <div class="row">
                 <h5 class="section-caption-vertical">New Users</h5>
-                <div class="pic-full-width startanim imganim" data-type="newUsers">
-                  <img src="/lab/img/projects/4peak/new-users.jpg" alt>
+                <div
+                  class="pic-full-width startanim imganim"
+                  data-type="newUsers"
+                >
+                  <img src="/img/projects/4peak/new-users.jpg" alt />
                 </div>
               </div>
             </section>
@@ -184,8 +236,11 @@
             <section class="section-picture">
               <div class="row">
                 <h5 class="section-caption-vertical">Active Races</h5>
-                <div class="pic-full-width startanim imganim" data-type="activeRaces">
-                  <img src="/lab/img/projects/4peak/active-races.jpg" alt>
+                <div
+                  class="pic-full-width startanim imganim"
+                  data-type="activeRaces"
+                >
+                  <img src="/img/projects/4peak/active-races.jpg" alt />
                 </div>
               </div>
             </section>
@@ -197,17 +252,32 @@
                   <div class="content__block startanim" data-type="tools">
                     <h3 class="content__title">Marketing tools</h3>
                     <div class="content__descr">
-                      <p>Tools for management of marketing campaigns had unnecessary features. We've improved the workflow and the design accordingly.</p>
+                      <p>
+                        Tools for management of marketing campaigns had
+                        unnecessary features. We've improved the workflow and
+                        the design accordingly.
+                      </p>
                     </div>
                   </div>
                   <h5 class="complicated__title">Old version</h5>
-                  <div class="complicated__block imganim" data-img="toolsimgOld">
-                    <img src="/lab/img/projects/4peak/tools--old.jpg" alt class="shadowed">
+                  <div
+                    class="complicated__block imganim"
+                    data-img="toolsimgOld"
+                  >
+                    <img
+                      src="/img/projects/4peak/tools--old.jpg"
+                      alt
+                      class="shadowed"
+                    />
                   </div>
                 </div>
                 <div class="right-image-cutted imganim" data-img="toolsimg">
-                <img src="/lab/img/projects/4peak/tools.jpg" alt class="shadowed">
-              </div>
+                  <img
+                    src="/img/projects/4peak/tools.jpg"
+                    alt
+                    class="shadowed"
+                  />
+                </div>
               </div>
             </div>
           </section>
@@ -218,16 +288,35 @@
                   <div class="content__block startanim" data-type="management">
                     <h3 class="content__title">Lifts management</h3>
                     <div class="content__descr">
-                      <p>We've updated the lifts management interface. Rare features moved back. Important features put on the forefront simplified the functionality. Now adding/editing lifts are on the same page.</p>
+                      <p>
+                        We've updated the lifts management interface. Rare
+                        features moved back. Important features put on the
+                        forefront simplified the functionality. Now
+                        adding/editing lifts are on the same page.
+                      </p>
                     </div>
                   </div>
                   <h5 class="complicated__title">Old version</h5>
-                  <div class="complicated__block imganim" data-img="managementImgOld">
-                    <img src="/lab/img/projects/4peak/lifts--old.jpg" alt class="shadowed">
+                  <div
+                    class="complicated__block imganim"
+                    data-img="managementImgOld"
+                  >
+                    <img
+                      src="/img/projects/4peak/lifts--old.jpg"
+                      alt
+                      class="shadowed"
+                    />
                   </div>
                 </div>
-                <div class="right-image-cutted imganim" data-img="managementImg">
-                <img src="/lab/img/projects/4peak/lifts.jpg" alt class="shadowed">
+                <div
+                  class="right-image-cutted imganim"
+                  data-img="managementImg"
+                >
+                  <img
+                    src="/img/projects/4peak/lifts.jpg"
+                    alt
+                    class="shadowed"
+                  />
                 </div>
               </div>
             </div>
@@ -238,14 +327,17 @@
                 <div class="content__block">
                   <h3 class="content__title">Ratings and graphs</h3>
                   <div class="content__descr">
-                    <p>Analytic data was not collected. We created pages for marketers and designed different views for analytics data.</p>
+                    <p>
+                      Analytic data was not collected. We created pages for
+                      marketers and designed different views for analytics data.
+                    </p>
                   </div>
                 </div>
               </div>
             </div>
             <div class="contr">
               <div class="pic-full-width ratings-picture imganim">
-                <img src="/lab/img/projects/4peak/ratings.png" alt>
+                <img src="/img/projects/4peak/ratings.png" alt />
               </div>
             </div>
           </section>
@@ -254,109 +346,120 @@
           <section class="next-project startanim" data-type="nextProject">
             <ul class="case__head_title" v-if="mobile">
               <li>
-                <div class="left">            
+                <div class="left">
                   <h2>
                     <span>Next</span>
-                  </h2>          
+                  </h2>
                 </div>
                 <div class="right">
-                  <h2>                
+                  <h2>
                     <span>Next</span>
                   </h2>
-                </div>            
+                </div>
               </li>
               <li>
-                <div class="left">            
+                <div class="left">
                   <h2>
                     <span>project</span>
-                  </h2>          
+                  </h2>
                 </div>
                 <div class="right">
-                  <h2>                
+                  <h2>
                     <span>project</span>
                   </h2>
-                </div>            
+                </div>
               </li>
               <li class="timer">
-                <div class="left">            
+                <div class="left">
                   <h2>
-                    <span>0{{timer}}</span>
-                  </h2>          
+                    <span>0{{ timer }}</span>
+                  </h2>
                 </div>
                 <div class="right">
-                  <h2>                
-                    <span>0{{timer}}</span>
+                  <h2>
+                    <span>0{{ timer }}</span>
                   </h2>
-                </div>            
+                </div>
               </li>
             </ul>
             <ul class="case__head_title" v-else>
               <li>
-                <div class="left">            
+                <div class="left">
                   <h2>
                     <span>Next project</span>
-                  </h2>          
+                  </h2>
                 </div>
                 <div class="right">
-                  <h2>                
+                  <h2>
                     <span>Next project</span>
                   </h2>
-                </div>            
+                </div>
               </li>
               <li class="timer">
-                <div class="left">            
+                <div class="left">
                   <h2>
-                    <span>0{{timer}}</span>
-                  </h2>          
+                    <span>0{{ timer }}</span>
+                  </h2>
                 </div>
                 <div class="right">
-                  <h2>                
-                    <span>0{{timer}}</span>
+                  <h2>
+                    <span>0{{ timer }}</span>
                   </h2>
-                </div>            
+                </div>
               </li>
             </ul>
             <div class="next-project__img">
-              <span data-displacement="/lab/img/displacement/pattern2.png" data-intensity="-0.65" data-speedIn="1" data-speedOut="1" data-startImage="/lab/img/displacement/start.png">
-                <img src="/lab/img/projects/reaktivate.jpg" alt="">
+              <span
+                data-displacement="/img/displacement/pattern2.png"
+                data-intensity="-0.65"
+                data-speedIn="1"
+                data-speedOut="1"
+                data-startImage="/img/displacement/start.png"
+              >
+                <img src="/img/projects/reaktivate.jpg" alt="" />
               </span>
-              <i></i>              
+              <i></i>
             </div>
             <div class="next-project__label">
               <h4>
                 <span>client</span>
-              </h4>  
+              </h4>
               <h5>
                 <span>Reaktivate</span>
               </h5>
-            </div>        
+            </div>
           </section>
         </div>
-      </div>  
+      </div>
     </article>
   </div>
 </template>
 
 <script>
 //import Scrollbar from "smooth-scrollbar";
-import * as hoverEffect from '~/assets/js/photosMorph';
-import * as hoverEffect2 from '~/assets/js/photosMorph2';
+import * as hoverEffect from "~/assets/js/photosMorph";
+import * as hoverEffect2 from "~/assets/js/photosMorph2";
 export default {
-  mounted: function() {
-    const app = this;    
-    TweenMax.set(document.querySelectorAll('.next-project'), {visibility: 'hidden'});
-    app.scrollbar = Scrollbar.init(document.querySelector("#app-projects-4peak .case"), {
-      alwaysShowTracks: true
+  mounted: function () {
+    const app = this;
+    TweenMax.set(document.querySelectorAll(".next-project"), {
+      visibility: "hidden",
     });
+    app.scrollbar = Scrollbar.init(
+      document.querySelector("#app-projects-4peak .case"),
+      {
+        alwaysShowTracks: true,
+      }
+    );
     app.scrollbar.addListener((status) => {
       app.scrollTop = status.offset.y;
-    });     
-    // document.querySelector('#app-projects-4peak').addEventListener('scroll', function(e){      
+    });
+    // document.querySelector('#app-projects-4peak').addEventListener('scroll', function(e){
     //   app.scrollTop = document.querySelector('#app-projects-4peak').scrollTop;
     // });
 
-    const el = document.querySelector('.case__head_img');
-    const imgs = Array.from(el.querySelectorAll('img'));    
+    const el = document.querySelector(".case__head_img");
+    const imgs = Array.from(el.querySelectorAll("img"));
     hoverEffect.init({
       parent: el,
       startImage: el.dataset.startimage,
@@ -366,10 +469,10 @@ export default {
       easing: el.dataset.easing || undefined,
       hover: el.dataset.hover || undefined,
       images: imgs,
-      displacementImage: el.dataset.displacement
+      displacementImage: el.dataset.displacement,
     });
-    const el2 = document.querySelector('.next-project__img span');
-    const imgs2 = Array.from(el2.querySelectorAll('img'));      
+    const el2 = document.querySelector(".next-project__img span");
+    const imgs2 = Array.from(el2.querySelectorAll("img"));
     hoverEffect2.init({
       parent: el2,
       startImage: el2.dataset.startimage,
@@ -378,289 +481,542 @@ export default {
       speedOut: el2.dataset.speedout || undefined,
       easing: el2.dataset.easing || undefined,
       hover: el2.dataset.hover || undefined,
-      images: imgs2,          
-      displacementImage: el2.dataset.displacement
+      images: imgs2,
+      displacementImage: el2.dataset.displacement,
     });
   },
-  
-  data: function() {
+
+  data: function () {
     return {
       nextProject: false,
       scrollbar: null,
       scrollTop: 0,
       scrollDelay: 300,
-      timer: 3
+      timer: 3,
     };
   },
   computed: {
-    appStart: function() {
+    appStart: function () {
       return this.$store.state.appStart;
     },
-    cursorColor: function(){
+    cursorColor: function () {
       return this.$store.state.cursorColor;
     },
-    cursorHoverColor: function(){
+    cursorHoverColor: function () {
       return this.$store.state.cursorHoverColor;
     },
-    resize: function(){
+    resize: function () {
       return this.$store.state.resize;
     },
-    mobile: function(){
+    mobile: function () {
       return this.$store.state.mobile;
     },
-    touch: function(){
+    touch: function () {
       return this.$store.state.touch;
-    }    
+    },
   },
   watch: {
-    scrollTop: function(top){
+    scrollTop: function (top) {
       const app = this;
-      let nextY = document.querySelector('.next-project').offsetTop;
-      let y = top + window.innerHeight - (window.innerHeight/2);      
-      if(y>nextY && !app.nextProject){            
+      let nextY = document.querySelector(".next-project").offsetTop;
+      let y = top + window.innerHeight - window.innerHeight / 2;
+      if (y > nextY && !app.nextProject) {
         app.nextProjectStart();
       }
-      if(app.mobile && top > (window.innerHeight / 2)){
-        TweenMax.to('.allprojects b', 0.4, {opacity: 0});
-      }else{
-        TweenMax.to('.allprojects b', 0.4, {opacity: 1});
+      if (app.mobile && top > window.innerHeight / 2) {
+        TweenMax.to(".allprojects b", 0.4, { opacity: 0 });
+      } else {
+        TweenMax.to(".allprojects b", 0.4, { opacity: 1 });
       }
-    },    
-    resize: function(e){
+    },
+    resize: function (e) {
       hoverEffect.resize();
       hoverEffect2.resize();
-    }
+    },
   },
-  methods: {   
-    hoverLinks: function(e){
+  methods: {
+    hoverLinks: function (e) {
       const app = this;
-      if(app.touch)return false;
-      if(app.appStart){
-        if(e.type == 'mouseenter'){          
-          app.$store.commit('set', {
-            name: 'cursorHoverActive',
-            value: true
+      if (app.touch) return false;
+      if (app.appStart) {
+        if (e.type == "mouseenter") {
+          app.$store.commit("set", {
+            name: "cursorHoverActive",
+            value: true,
           });
-          TweenMax.to('.cursor-ring', 0.2, {scale : 1.5});
-          TweenMax.to('.progress-ring__circle', 0.2, {stroke : app.cursorHoverColor});
-        }else{
-          app.$store.commit('set', {
-            name: 'cursorHoverActive',
-            value: false
+          TweenMax.to(".cursor-ring", 0.2, { scale: 1.5 });
+          TweenMax.to(".progress-ring__circle", 0.2, {
+            stroke: app.cursorHoverColor,
           });
-          TweenMax.to('.cursor-ring', 0.2, {scale : 1});
-          TweenMax.to('.progress-ring__circle', 0.2, {stroke : app.cursorColor});
+        } else {
+          app.$store.commit("set", {
+            name: "cursorHoverActive",
+            value: false,
+          });
+          TweenMax.to(".cursor-ring", 0.2, { scale: 1 });
+          TweenMax.to(".progress-ring__circle", 0.2, {
+            stroke: app.cursorColor,
+          });
         }
       }
-    }, 
-    startAnimationInit: function(){
+    },
+    startAnimationInit: function () {
       const app = this;
-      document.querySelectorAll('.startanim').forEach(el => {
-        var type = el.getAttribute('data-type');
-        if(!type)return;
+      document.querySelectorAll(".startanim").forEach((el) => {
+        var type = el.getAttribute("data-type");
+        if (!type) return;
         app.initElements[type] = {
           el: el,
-          y: Math.floor(el.getBoundingClientRect().top)
-        };        
+          y: Math.floor(el.getBoundingClientRect().top),
+        };
       });
-      document.querySelectorAll('.imganim').forEach(el => {
-        let src = el.querySelector('img').src;        
-        let i = document.createElement('i');
-        i.style.backgroundImage = 'url("'+src+'")';
-        el.appendChild(i);        
+      document.querySelectorAll(".imganim").forEach((el) => {
+        let src = el.querySelector("img").src;
+        let i = document.createElement("i");
+        i.style.backgroundImage = 'url("' + src + '")';
+        el.appendChild(i);
       });
     },
-    nextProjectStart: function(type){      
+    nextProjectStart: function (type) {
       const app = this;
       app.nextProject = true;
       app.scrollbar.options._damping = 0.07;
-      app.scrollbar.scrollIntoView(document.querySelector('.next-project'), {
+      app.scrollbar.scrollIntoView(document.querySelector(".next-project"), {
         alignToTop: true,
         onlyScrollIfNeeded: false,
       });
-      var tl = new TimelineMax().set(document.querySelectorAll('.next-project__label span'), {y: '110%'})
-      .set(document.querySelectorAll('.next-project .case__head_title li:not(.timer) span'), {visibility: 'hidden'})
-      .set(document.querySelectorAll('.next-project .case__head_title li.timer span'), {visibility: 'hidden'})
-      .set('.next-project', {visibility: 'visible'})      
-      .fromTo('.next-project__img', 0.7, {x: '100%'}, {x: '0%', ease: Power4.easeInOut, onComplete: function(){
-        hoverEffect2.start();
-      }}, 'list')
+      var tl = new TimelineMax()
+        .set(document.querySelectorAll(".next-project__label span"), {
+          y: "110%",
+        })
+        .set(
+          document.querySelectorAll(
+            ".next-project .case__head_title li:not(.timer) span"
+          ),
+          { visibility: "hidden" }
+        )
+        .set(
+          document.querySelectorAll(
+            ".next-project .case__head_title li.timer span"
+          ),
+          { visibility: "hidden" }
+        )
+        .set(".next-project", { visibility: "visible" })
+        .fromTo(
+          ".next-project__img",
+          0.7,
+          { x: "100%" },
+          {
+            x: "0%",
+            ease: Power4.easeInOut,
+            onComplete: function () {
+              hoverEffect2.start();
+            },
+          },
+          "list"
+        )
 
-      //.staggerTo(document.querySelectorAll('.contacts__title li[data-type="title"] .left h1 span'), 1.5, {x : x, ease: Power4.easeInOut}, 0.08, 'uno')
-      //.staggerTo(document.querySelectorAll('.contacts__title li[data-type="title"] .right h1 span'), 1.5, {x : x, ease: Power4.easeInOut}, 0.08, 'uno')
+        //.staggerTo(document.querySelectorAll('.contacts__title li[data-type="title"] .left h1 span'), 1.5, {x : x, ease: Power4.easeInOut}, 0.08, 'uno')
+        //.staggerTo(document.querySelectorAll('.contacts__title li[data-type="title"] .right h1 span'), 1.5, {x : x, ease: Power4.easeInOut}, 0.08, 'uno')
 
-
-      .staggerFromTo(document.querySelectorAll('.next-project .case__head_title li:not(.timer) .left span'), 1, {x: '-100vw'}, {x : 0, visibility: 'visible', ease: Power4.easeOut}, 0.15, 'list+=1.1')
-      .staggerFromTo(document.querySelectorAll('.next-project .case__head_title li:not(.timer) .right span'), 1, {x: '-100vw'}, {x : 0, visibility: 'visible', ease: Power4.easeOut}, 0.15, 'list+=1.1')
-      .staggerTo(document.querySelectorAll('.next-project__label span'), 0.4, {y: '0%'}, 0.3, 'list+=1.8')
-      .fromTo(document.querySelectorAll('.next-project .case__head_title li.timer span'), 1, {x: function(i, el){              
-        let w = -el.clientWidth - 70+'px';              
-        return w;
-      }}, {x : '100vw', visibility: 'visible', ease: SlowMo.ease.config(0.2, 0.8, false), onComplete: function(){              
-        app.timer--;
-      }}, 'list+=2.6')
-      .fromTo(document.querySelectorAll('.next-project .case__head_title li.timer span'), 1, {x: function(i, el){              
-        let w = -el.clientWidth - 70+'px';              
-        return w;
-      }}, {x : '100vw', visibility: 'visible', ease: SlowMo.ease.config(0.2, 0.8, false), onComplete: function(){
-        app.timer--;
-      }})
-      .fromTo(document.querySelectorAll('.next-project .case__head_title li.timer span'), 1, {x: function(i, el){              
-        let w = -el.clientWidth - 70+'px';              
-        return w;
-      }}, {x : '100vw', visibility: 'visible', ease: SlowMo.ease.config(0.2, 0.8, false), onComplete: function(){
-        app.$router.push({path: '/projects/reaktivate'});
-      }})
-    }
+        .staggerFromTo(
+          document.querySelectorAll(
+            ".next-project .case__head_title li:not(.timer) .left span"
+          ),
+          1,
+          { x: "-100vw" },
+          { x: 0, visibility: "visible", ease: Power4.easeOut },
+          0.15,
+          "list+=1.1"
+        )
+        .staggerFromTo(
+          document.querySelectorAll(
+            ".next-project .case__head_title li:not(.timer) .right span"
+          ),
+          1,
+          { x: "-100vw" },
+          { x: 0, visibility: "visible", ease: Power4.easeOut },
+          0.15,
+          "list+=1.1"
+        )
+        .staggerTo(
+          document.querySelectorAll(".next-project__label span"),
+          0.4,
+          { y: "0%" },
+          0.3,
+          "list+=1.8"
+        )
+        .fromTo(
+          document.querySelectorAll(
+            ".next-project .case__head_title li.timer span"
+          ),
+          1,
+          {
+            x: function (i, el) {
+              let w = -el.clientWidth - 70 + "px";
+              return w;
+            },
+          },
+          {
+            x: "100vw",
+            visibility: "visible",
+            ease: SlowMo.ease.config(0.2, 0.8, false),
+            onComplete: function () {
+              app.timer--;
+            },
+          },
+          "list+=2.6"
+        )
+        .fromTo(
+          document.querySelectorAll(
+            ".next-project .case__head_title li.timer span"
+          ),
+          1,
+          {
+            x: function (i, el) {
+              let w = -el.clientWidth - 70 + "px";
+              return w;
+            },
+          },
+          {
+            x: "100vw",
+            visibility: "visible",
+            ease: SlowMo.ease.config(0.2, 0.8, false),
+            onComplete: function () {
+              app.timer--;
+            },
+          }
+        )
+        .fromTo(
+          document.querySelectorAll(
+            ".next-project .case__head_title li.timer span"
+          ),
+          1,
+          {
+            x: function (i, el) {
+              let w = -el.clientWidth - 70 + "px";
+              return w;
+            },
+          },
+          {
+            x: "100vw",
+            visibility: "visible",
+            ease: SlowMo.ease.config(0.2, 0.8, false),
+            onComplete: function () {
+              app.$router.push({ path: "/projects/reaktivate" });
+            },
+          }
+        );
+    },
   },
   transition: {
     mode: "out-in",
     css: false,
-    enter: function(el, done) {
+    enter: function (el, done) {
       const app = this;
-      app.$store.commit('set', {
-        name: 'page',
-        value: '4peak'
+      app.$store.commit("set", {
+        name: "page",
+        value: "4peak",
       });
-      app.$store.commit('set', {
-        name: 'cursorColor',
-        value: '#b6b6b6'
+      app.$store.commit("set", {
+        name: "cursorColor",
+        value: "#b6b6b6",
       });
-      app.$store.commit('set', {
-        name: 'cursorHoverColor',
-        value: '#90f8eb'
+      app.$store.commit("set", {
+        name: "cursorHoverColor",
+        value: "#90f8eb",
       });
-      app.$store.commit('set', {
-        name: 'cursorLongAnimate',
-        value: false
+      app.$store.commit("set", {
+        name: "cursorLongAnimate",
+        value: false,
       });
-      app.$store.commit('set', {
-        name: 'cursorLongAnimatePermit',
-        value: false
+      app.$store.commit("set", {
+        name: "cursorLongAnimatePermit",
+        value: false,
       });
-      app.$store.commit('set', {
-        name: 'scroll',
-        value: false
+      app.$store.commit("set", {
+        name: "scroll",
+        value: false,
       });
-      TweenMax.set('.main-bg', {backgroundColor : '#fff', height : '100%', width : 0, x : 0});
-      TweenMax.set('.case__head', {x: '-100%'});
-      TweenMax.set(document.querySelectorAll('#app-projects-4peak .leave'), {opacity: 0});
-      TweenMax.set(document.querySelectorAll('.case__head .case__head_title span'), {x: '-100vw'});
-      TweenMax.set(document.querySelectorAll('.case__head_characteristic span'), {y: '110%'});
-      TweenMax.set('.case__head_characteristic .link .background', {width: '0%'});      
-      TweenMax.set('.allprojects a span', {y: '-100%'});
-      TweenMax.set('.allprojects i', {scale: 0});
-      TweenMax.to('.preloader span', 1.3, {y : 50});
-      TweenMax.to('.main-bg', 0.7, {width : '100%', ease: Power3.easeIn});
-      TweenMax.to('.main-bg', 0.7, {css : {transform : 'translateX(-50vw)'}, ease: Power3.easeIn});
-      TweenMax.to(document.querySelectorAll('.go-tonext span, .dda span'), 0.4, {y : 13, delay : 0.4});
-      new TimelineMax().to('#logo .gaps', 0.3, {opacity: 0})
-      .to('#logo .logo1', 0.3, {morphSVG: '#logo .logo2'}, 'uno')
-      .to('#logo .number1', 0.3, {morphSVG: '#logo .number2'}, 'uno')
-      .set('header .logo', {width: 50}, 'uno');
-      TweenMax.to('.preloader', 0.7, {backgroundColor : '#1d1d1d', ease: Power3.easeIn, onComplete : function(){
-        TweenMax.set('#app', {backgroundColor : '#fff'});        
-        TweenMax.set('.main-bg', {backgroundColor : 'transparent', width : 0, height : 0});
-        TweenMax.to('.preloader', 0.7, {height: 0, y : 0, ease: Power3.easeOut, onComplete : function(){
-          TweenMax.to('.g-pager i', 1, { width: '0px', ease: Power4.easeInOut, onComplete(){
-            TweenMax.to('.g-pager div', 0.4, {x : '-100%'});  
-          }});
-          TweenMax.to('.logo', 0.4, {y : 0});
-          TweenMax.to('.follow-us_title span', 0.4, {y : 35, onComplete : function(){
-            TweenMax.to('header .menu span', 0.3, {y : 0});
-            TweenMax.staggerTo(document.querySelectorAll('header nav > div'), 0.3, {y : 0}, 0.1);
-            TweenMax.staggerTo(['.follow-us li.be', '.follow-us li.dr', '.follow-us li.fb', '.follow-us li.ig'], 0.3, {y : 35}, 0.1);
-            TweenMax.to(document.querySelectorAll('#app-projects-4peak .leave'), 1.4, {opacity: 1});            
-            app.$store.commit('set', {
-              name : 'firstPage',
-              value : false
-            });
-            app.$store.commit('set', {
-              'name': 'transitionPage',
-              value: false
-            });
-          }});
-        }});
-
-        new TimelineMax({delay: 0.6}).to('.case__head', 0.8, {x: '0%', ease: Power3.easeInOut})
-        .to(document.querySelectorAll('.case__head .case__head_title span'), 0.7, {x: '0%', ease: Power4.easeOut, onComplete: function(){
-          hoverEffect.start();
-        }})
-        .to('.allprojects a span', 0.4, {y: '0%'}, 'end')
-        .to('.allprojects i', 0.4, {scale: 1}, 'end')
-        .staggerTo('.case__head_characteristic h4 span', 0.4, {y: '0%'}, 0.2, 'end')
-        .staggerTo('.case__head_characteristic h5 span', 0.4, {y: '0%'}, 0.2, 'end')
-        .set('.scrollbar-track-y', {opacity: 1})
-        .to('.case__head_characteristic .link .background', 0.4, {width: '100%', ease: Power3.easeInOut})
-        .to('.case__head_characteristic .link span', 0.4, {y: '0%'}, '+=0.3')        
-      }});
-
-
-      done(); 
-    },
-    leave: function(el, done) {
-      const app = this;      
-      app.$store.commit('set', {
-        name: 'menu',
-        value: false
+      TweenMax.set(".main-bg", {
+        backgroundColor: "#fff",
+        height: "100%",
+        width: 0,
+        x: 0,
       });
-      app.$store.commit('set', {
-        'name': 'transitionPage',
-        value: true
-      });      
-      hoverEffect.end();      
+      TweenMax.set(".case__head", { x: "-100%" });
+      TweenMax.set(document.querySelectorAll("#app-projects-4peak .leave"), {
+        opacity: 0,
+      });
+      TweenMax.set(
+        document.querySelectorAll(".case__head .case__head_title span"),
+        { x: "-100vw" }
+      );
+      TweenMax.set(
+        document.querySelectorAll(".case__head_characteristic span"),
+        { y: "110%" }
+      );
+      TweenMax.set(".case__head_characteristic .link .background", {
+        width: "0%",
+      });
+      TweenMax.set(".allprojects a span", { y: "-100%" });
+      TweenMax.set(".allprojects i", { scale: 0 });
+      TweenMax.to(".preloader span", 1.3, { y: 50 });
+      TweenMax.to(".main-bg", 0.7, { width: "100%", ease: Power3.easeIn });
+      TweenMax.to(".main-bg", 0.7, {
+        css: { transform: "translateX(-50vw)" },
+        ease: Power3.easeIn,
+      });
+      TweenMax.to(
+        document.querySelectorAll(".go-tonext span, .dda span"),
+        0.4,
+        { y: 13, delay: 0.4 }
+      );
       new TimelineMax()
-      .staggerTo(document.querySelectorAll('.case__head .case__head_title .left span'), 1, {x: '100vw', ease: Power3.easeInOut}, 0.15, 'end')
-      .staggerTo(document.querySelectorAll('.case__head .case__head_title .right span'), 1, {x: '100vw', ease: Power3.easeInOut}, 0.15, 'end')
-      .staggerTo(document.querySelectorAll('.next-project .case__head_title .left span'), 1, {x: '100vw', ease: Power3.easeInOut}, 0.15, 'end')
-      .staggerTo(document.querySelectorAll('.next-project .case__head_title .right span'), 1, {x: '100vw', ease: Power3.easeInOut}, 0.15, 'end')
-      .addCallback(function(){
-        hoverEffect2.end();
-      }, '-=0.4')
-      
-      //.to('.next-project__img', 0.7, {x: '100%', ease: Power4.easeInOut}, 'end+=1.5')
-      .set('.scrollbar-track-y', {opacity: 0}, 'end')
-      .staggerTo(document.querySelectorAll('.next-project__label span'), 0.4, {y: '110%'}, 0.3, 'end')
-      .to(document.querySelectorAll('.leave'), 1.4, {opacity: 0}, 'end')
-      .to('.allprojects a span', 0.4, {y: '100%'}, 'end')
-      .to('.allprojects i', 0.4, {scale: 0}, 'end')
-      .staggerTo('.case__head_characteristic h4 span', 0.4, {y: '110%'}, 0.2, 'end')
-      .staggerTo('.case__head_characteristic h5 span', 0.4, {y: '110%'}, 0.2, 'end')
-      .to('.case__head_characteristic .link span', 0.4, {y: '100%'}, 'end')
-      .to('.case__head_characteristic .link .background', 0.4, {width: '0%', ease: Power3.easeInOut}, 'end')
-      .to('.case__head', 0.8, {x: '-100%', ease: Power3.easeInOut}, 'end+=0.8')
-      .to(document.querySelectorAll('.dda span'), 0.4, {y : function(){                
-        if(!app.$route.name.split('projects-')[1])return 0;
-      }})
-      .to('.preloader', 0.7, {y : 0, height : '100%', ease: Power3.easeIn, onComplete : function(){
-        TweenMax.killChildTweensOf(document.querySelectorAll('.main'));
-        Scrollbar.destroyAll();
-        hoverEffect.clear();
-        hoverEffect2.clear();        
-        done();
-      }}, 'end+=1.2')
-      .to('.next-project-wrapper', 0.7, {opacity: 0}, 'end+=1.2')
-      
+        .to("#logo .gaps", 0.3, { opacity: 0 })
+        .to("#logo .logo1", 0.3, { morphSVG: "#logo .logo2" }, "uno")
+        .to("#logo .number1", 0.3, { morphSVG: "#logo .number2" }, "uno")
+        .set("header .logo", { width: 50 }, "uno");
+      TweenMax.to(".preloader", 0.7, {
+        backgroundColor: "#1d1d1d",
+        ease: Power3.easeIn,
+        onComplete: function () {
+          TweenMax.set("#app", { backgroundColor: "#fff" });
+          TweenMax.set(".main-bg", {
+            backgroundColor: "transparent",
+            width: 0,
+            height: 0,
+          });
+          TweenMax.to(".preloader", 0.7, {
+            height: 0,
+            y: 0,
+            ease: Power3.easeOut,
+            onComplete: function () {
+              TweenMax.to(".g-pager i", 1, {
+                width: "0px",
+                ease: Power4.easeInOut,
+                onComplete() {
+                  TweenMax.to(".g-pager div", 0.4, { x: "-100%" });
+                },
+              });
+              TweenMax.to(".logo", 0.4, { y: 0 });
+              TweenMax.to(".follow-us_title span", 0.4, {
+                y: 35,
+                onComplete: function () {
+                  TweenMax.to("header .menu span", 0.3, { y: 0 });
+                  TweenMax.staggerTo(
+                    document.querySelectorAll("header nav > div"),
+                    0.3,
+                    { y: 0 },
+                    0.1
+                  );
+                  TweenMax.staggerTo(
+                    [
+                      ".follow-us li.be",
+                      ".follow-us li.dr",
+                      ".follow-us li.fb",
+                      ".follow-us li.ig",
+                    ],
+                    0.3,
+                    { y: 35 },
+                    0.1
+                  );
+                  TweenMax.to(
+                    document.querySelectorAll("#app-projects-4peak .leave"),
+                    1.4,
+                    { opacity: 1 }
+                  );
+                  app.$store.commit("set", {
+                    name: "firstPage",
+                    value: false,
+                  });
+                  app.$store.commit("set", {
+                    name: "transitionPage",
+                    value: false,
+                  });
+                },
+              });
+            },
+          });
+
+          new TimelineMax({ delay: 0.6 })
+            .to(".case__head", 0.8, { x: "0%", ease: Power3.easeInOut })
+            .to(
+              document.querySelectorAll(".case__head .case__head_title span"),
+              0.7,
+              {
+                x: "0%",
+                ease: Power4.easeOut,
+                onComplete: function () {
+                  hoverEffect.start();
+                },
+              }
+            )
+            .to(".allprojects a span", 0.4, { y: "0%" }, "end")
+            .to(".allprojects i", 0.4, { scale: 1 }, "end")
+            .staggerTo(
+              ".case__head_characteristic h4 span",
+              0.4,
+              { y: "0%" },
+              0.2,
+              "end"
+            )
+            .staggerTo(
+              ".case__head_characteristic h5 span",
+              0.4,
+              { y: "0%" },
+              0.2,
+              "end"
+            )
+            .set(".scrollbar-track-y", { opacity: 1 })
+            .to(".case__head_characteristic .link .background", 0.4, {
+              width: "100%",
+              ease: Power3.easeInOut,
+            })
+            .to(
+              ".case__head_characteristic .link span",
+              0.4,
+              { y: "0%" },
+              "+=0.3"
+            );
+        },
+      });
+
+      done();
+    },
+    leave: function (el, done) {
+      const app = this;
+      app.$store.commit("set", {
+        name: "menu",
+        value: false,
+      });
+      app.$store.commit("set", {
+        name: "transitionPage",
+        value: true,
+      });
+      hoverEffect.end();
+      new TimelineMax()
+        .staggerTo(
+          document.querySelectorAll(".case__head .case__head_title .left span"),
+          1,
+          { x: "100vw", ease: Power3.easeInOut },
+          0.15,
+          "end"
+        )
+        .staggerTo(
+          document.querySelectorAll(
+            ".case__head .case__head_title .right span"
+          ),
+          1,
+          { x: "100vw", ease: Power3.easeInOut },
+          0.15,
+          "end"
+        )
+        .staggerTo(
+          document.querySelectorAll(
+            ".next-project .case__head_title .left span"
+          ),
+          1,
+          { x: "100vw", ease: Power3.easeInOut },
+          0.15,
+          "end"
+        )
+        .staggerTo(
+          document.querySelectorAll(
+            ".next-project .case__head_title .right span"
+          ),
+          1,
+          { x: "100vw", ease: Power3.easeInOut },
+          0.15,
+          "end"
+        )
+        .addCallback(function () {
+          hoverEffect2.end();
+        }, "-=0.4")
+
+        //.to('.next-project__img', 0.7, {x: '100%', ease: Power4.easeInOut}, 'end+=1.5')
+        .set(".scrollbar-track-y", { opacity: 0 }, "end")
+        .staggerTo(
+          document.querySelectorAll(".next-project__label span"),
+          0.4,
+          { y: "110%" },
+          0.3,
+          "end"
+        )
+        .to(document.querySelectorAll(".leave"), 1.4, { opacity: 0 }, "end")
+        .to(".allprojects a span", 0.4, { y: "100%" }, "end")
+        .to(".allprojects i", 0.4, { scale: 0 }, "end")
+        .staggerTo(
+          ".case__head_characteristic h4 span",
+          0.4,
+          { y: "110%" },
+          0.2,
+          "end"
+        )
+        .staggerTo(
+          ".case__head_characteristic h5 span",
+          0.4,
+          { y: "110%" },
+          0.2,
+          "end"
+        )
+        .to(".case__head_characteristic .link span", 0.4, { y: "100%" }, "end")
+        .to(
+          ".case__head_characteristic .link .background",
+          0.4,
+          { width: "0%", ease: Power3.easeInOut },
+          "end"
+        )
+        .to(
+          ".case__head",
+          0.8,
+          { x: "-100%", ease: Power3.easeInOut },
+          "end+=0.8"
+        )
+        .to(document.querySelectorAll(".dda span"), 0.4, {
+          y: function () {
+            if (!app.$route.name.split("projects-")[1]) return 0;
+          },
+        })
+        .to(
+          ".preloader",
+          0.7,
+          {
+            y: 0,
+            height: "100%",
+            ease: Power3.easeIn,
+            onComplete: function () {
+              TweenMax.killChildTweensOf(document.querySelectorAll(".main"));
+              Scrollbar.destroyAll();
+              hoverEffect.clear();
+              hoverEffect2.clear();
+              done();
+            },
+          },
+          "end+=1.2"
+        )
+        .to(".next-project-wrapper", 0.7, { opacity: 0 }, "end+=1.2");
+
       //done();
-    }
-  }
+    },
+  },
 };
 </script>
 
 <style lang="scss">
 #app-projects-4peak {
-  overflow: hidden;  
+  overflow: hidden;
   height: 100%;
   .scroll-content {
     overflow: hidden;
   }
   .case {
     overflow: hidden;
-    height: 100%;    
+    height: 100%;
   }
   .imganim {
     position: relative;
-    img {      
+    img {
       display: block;
     }
     i {
@@ -682,7 +1038,7 @@ export default {
       left: auto;
       right: 0;
       background-position: right;
-    }    
+    }
   }
   .scrollbar-track {
     width: 6px;
@@ -694,26 +1050,26 @@ export default {
         background-color: #191919;
         border-radius: 0;
       }
-    }    
+    }
   }
-  
+
   .allprojects {
     position: fixed;
     left: 70px;
     top: 245px;
     font-size: 10px;
     line-height: 10px;
-    text-transform: uppercase;    
+    text-transform: uppercase;
     transform: rotate(-90deg) translateX(-70px);
-    transform-origin: left;    
-    z-index: 10;    
+    transform-origin: left;
+    z-index: 10;
     @media screen and (max-width: 900px) {
       top: 195px;
       left: 95px;
     }
     @media screen and (max-width: 480px) {
       top: 165px;
-      left: 55px;      
+      left: 55px;
     }
     a {
       color: #fff;
@@ -733,10 +1089,9 @@ export default {
         color: #191919;
       }
       @media only screen and (max-width: 480px) {
-        
       }
-    }    
-    i {      
+    }
+    i {
       width: 0;
       display: block;
       height: 0px;
@@ -770,16 +1125,15 @@ export default {
           left: 20px;
           box-sizing: border-box;
           transform: rotate(45deg);
-        }      
-      }      
-      @media screen and (max-width: 480px) {
-        
+        }
       }
-    }  
+      @media screen and (max-width: 480px) {
+      }
+    }
   }
   .case__head {
     width: calc(100vw - 140px);
-    margin-top: 150px;    
+    margin-top: 150px;
     background-color: #394764;
     position: relative;
     @media screen and (max-width: 900px) {
@@ -811,7 +1165,7 @@ export default {
         display: none;
         bottom: 0;
       }
-    }    
+    }
     .case__head_characteristic {
       padding: 54px 0 0 0;
       margin-left: 140px;
@@ -828,7 +1182,7 @@ export default {
         flex-direction: column;
         padding: 30px 0 70px 0;
       }
-      .output {        
+      .output {
         width: 21.5%;
         @media screen and (max-width: 900px) {
           width: 31.5%;
@@ -848,13 +1202,13 @@ export default {
         position: absolute;
         top: 50px;
         right: -70px;
-        
+
         width: 203px;
-        height: 70px;        
+        height: 70px;
         font-size: 18px;
         line-height: 1;
         font-weight: 400;
-        color: #212121;        
+        color: #212121;
         .background {
           background: #90f8eb;
           width: 100%;
@@ -910,10 +1264,10 @@ export default {
       margin-top: 35vw;
     }
     li {
-      display: flex;    
+      display: flex;
       position: relative;
-      height: 21.3vw;        
-      pointer-events: none; 
+      height: 21.3vw;
+      pointer-events: none;
       margin: -13vw -1.7vw 0 -1.7vw;
       &:first-child {
         margin-top: 0;
@@ -923,7 +1277,7 @@ export default {
       }
       .left {
         width: 50%;
-        overflow: hidden;  
+        overflow: hidden;
         color: #fff;
         h2 {
           transform: translate3d(0, 0, 0) rotate(-15deg) skewX(-15deg);
@@ -931,7 +1285,7 @@ export default {
       }
       .right {
         width: 50%;
-        overflow: hidden;  
+        overflow: hidden;
         color: #fff;
         h2 {
           margin-left: -100%;
@@ -945,9 +1299,9 @@ export default {
         line-height: 8.2vw;
         text-transform: uppercase;
         font-weight: 900;
-        letter-spacing: -.45vw;
-        width: 200%;          
-        overflow: hidden;  
+        letter-spacing: -0.45vw;
+        width: 200%;
+        overflow: hidden;
         position: relative;
         z-index: 1;
         @media screen and (max-width: 900px) {
@@ -958,8 +1312,8 @@ export default {
           padding: 0 30px;
         }
         span {
-          display: inline-block;            
-        }          
+          display: inline-block;
+        }
       }
     }
   }
@@ -1005,7 +1359,7 @@ export default {
     justify-content: center;
   }
   .h-auto {
-    height: auto!important;
+    height: auto !important;
   }
   .font-weight-normal {
     font-weight: normal;
@@ -1148,7 +1502,7 @@ export default {
       bottom: 0;
       top: 0;
       margin: auto;
-        font-size: 18px;
+      font-size: 18px;
       font-weight: 900;
       font-style: normal;
       line-height: normal;
@@ -1197,13 +1551,13 @@ export default {
   .ratings-picture {
     margin-top: -130px;
   }
-.right-image-cutted {
-  flex-grow: 1;
-  img {
+  .right-image-cutted {
+    flex-grow: 1;
+    img {
       height: 100%;
-    object-fit: cover;
-    object-position: left;
-}
+      object-fit: cover;
+      object-position: left;
+    }
   }
   @media only screen and (max-width: 992px) {
     .contr--with-padding {
@@ -1292,8 +1646,6 @@ export default {
     }
   }
 
-
-
   .next-project-wrapper {
     background-color: #191919;
   }
@@ -1358,7 +1710,7 @@ export default {
       }
     }
     .next-project__img {
-      margin: 0 0 0 auto;    
+      margin: 0 0 0 auto;
       display: flex;
       @media screen and (max-width: 480px) {
         position: absolute;
@@ -1370,15 +1722,15 @@ export default {
         display: block;
       }
       canvas {
-        height: 100%!important;
+        height: 100% !important;
         display: block;
         @media screen and (max-width: 480px) {
-          width: 100%!important;
+          width: 100% !important;
         }
       }
       // overflow: hidden;
-      i {      
-        width: 140px;      
+      i {
+        width: 140px;
         background-color: #fff;
         @media screen and (max-width: 900px) {
           display: none;
@@ -1403,9 +1755,5 @@ export default {
       }
     }
   }
-
-
-
 }
 </style>
-

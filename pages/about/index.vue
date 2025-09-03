@@ -133,7 +133,7 @@
     <!-- ============ TEAM PROFILE =============== -->
     <article class="about__index_profile">      
       <div class="photo" data-displacement="./img/displacement/pattern4.png" data-intensity="-0.65" data-speedIn="1" data-speedOut="1" data-startImage="./img/displacement/start.png">                
-        <img src="/lab/img/about/bg_team.jpg" alt="">
+        <img src="/img/about/bg_team.jpg" alt="">
       </div>
     </article>
 
