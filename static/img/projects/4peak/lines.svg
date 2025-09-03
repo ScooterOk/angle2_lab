@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1280px" height="296px" viewBox="0 0 1280 296" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 10</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M0,288.449322 C79.0313405,172.276296 181.680522,136.738817 307.947544,181.836883 C497.348076,249.483982 492.821616,276.699571 639.530316,288.449322 C786.239017,300.199074 827.321614,119.608249 885.514763,158.404268 C943.707913,197.200287 999.337301,119.193236 1021.98739,91.0492146 C1044.63748,62.905193 1133.51102,-22.9333043 1271.1384,28.3592135 C1362.88999,62.5542253 1449.51052,53.1011542 1531,0" id="path-1"></path>
+        <filter x="-1.0%" y="-3.1%" width="101.9%" height="111.4%" filterUnits="objectBoundingBox" id="filter-2">
+            <feMorphology radius="1.5" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
+            <feOffset dx="0" dy="10" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+            <feMorphology radius="1.5" operator="erode" in="SourceAlpha" result="shadowInner"></feMorphology>
+            <feOffset dx="0" dy="10" in="shadowInner" result="shadowInner"></feOffset>
+            <feComposite in="shadowOffsetOuter1" in2="shadowInner" operator="out" result="shadowOffsetOuter1"></feComposite>
+            <feGaussianBlur stdDeviation="2.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.137254902   0 0 0 0 0.176470588   0 0 0 0 0.564705882  0 0 0 0.21 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <path d="M0,279 C121.690145,207.422259 261.794886,199.424847 420.314224,255.007764 C658.093231,338.382139 676.931376,60.2663366 765.433301,61.1805294 C853.935227,62.0947221 874.703185,185.294041 948.160309,183.63495 C1021.61743,181.97586 1102.22387,39.6055813 1221.51844,39.0028913 C1301.04815,38.601098 1409.87534,80.0761027 1548,163.427906" id="path-3"></path>
+        <filter x="-0.9%" y="-3.7%" width="101.9%" height="114.0%" filterUnits="objectBoundingBox" id="filter-4">
+            <feMorphology radius="1.5" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
+            <feOffset dx="0" dy="10" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+            <feMorphology radius="1.5" operator="erode" in="SourceAlpha" result="shadowInner"></feMorphology>
+            <feOffset dx="0" dy="10" in="shadowInner" result="shadowInner"></feOffset>
+            <feComposite in="shadowOffsetOuter1" in2="shadowInner" operator="out" result="shadowOffsetOuter1"></feComposite>
+            <feGaussianBlur stdDeviation="2.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.996078431   0 0 0 0 0.858823529   0 0 0 0 0.870588235  0 0 0 1 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="4peak" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round">
+        <g id="4peak-1280" transform="translate(0.000000, -4528.000000)">
+            <g id="Group-10" transform="translate(-35.000000, 4518.000000)">
+                <g id="Path-">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                    <use stroke="#3A4764" stroke-width="3" xlink:href="#path-1"></use>
+                </g>
+                <g id="Path-2-">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-4)" xlink:href="#path-3"></use>
+                    <use stroke="#E83742" stroke-width="3" xlink:href="#path-3"></use>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
