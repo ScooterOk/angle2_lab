@@ -132,7 +132,7 @@
 
     <!-- ============ TEAM PROFILE =============== -->
     <article class="about__index_profile">      
-      <div class="photo" data-displacement="./img/displacement/pattern4.png" data-intensity="-0.65" data-speedIn="1" data-speedOut="1" data-startImage="./img/displacement/start.png">                
+      <div class="photo" data-displacement="/img/displacement/pattern4.png" data-intensity="-0.65" data-speedIn="1" data-speedOut="1" data-startImage="/img/displacement/start.png">                
         <img src="/img/about/bg_team.jpg" alt="">
       </div>
     </article>
@@ -162,6 +162,124 @@ export default {
         displacementImage: el.dataset.displacement
       });
     }, 200);
+     
+      app.$store.commit('set', {
+        name: 'page',
+        value: 'about'
+      });
+      app.$store.commit('set', {
+        name: 'cursorColor',
+        value: '#b6b6b6'
+      });
+      app.$store.commit('set', {
+        name: 'cursorHoverColor',
+        value: '#2af8eb'
+      });
+      app.$store.commit('set', {
+        name: 'cursorLongAnimate',
+        value: false
+      });      
+      app.$store.commit('set', {
+        name: 'scroll',
+        value: true
+      });      
+      app.$store.commit('set', {
+        name: 'cursorLongAnimatePermit',
+        value: true
+      });
+      app.$store.commit('about', {
+        name : 'titleAnimate',
+        value : false
+      });
+      app.$store.commit('about', {
+        name : 'enterDone',
+        value : false
+      });      
+      TweenMax.set(document.querySelectorAll('.about__index_title li:nth-child(odd) span'), {x: '-100vw'});
+      TweenMax.set(document.querySelectorAll('.about__index_title li:nth-child(even) span'), {x: '100vw'});
+      TweenMax.set(document.querySelectorAll('.about__start_text'), {visibility: 'hidden'});
+      TweenMax.set(document.querySelectorAll('#app-about .wld span'), {y : -13});
+      TweenMax.set(document.querySelectorAll('.goteam span'), {y: '100%'});
+      TweenMax.set('.goteam i', {scale: 0});
+      TweenMax.set('.about__bar', {height: '0%'});
+      TweenMax.set('.about__bar i', {x: '100%'});
+      //TweenMax.set(document.querySelectorAll('#app-about .wld span'), {css : {'letter-spacing': '20px', 'transition-timing-function' : 'cubic-bezier(0.505, 0.000, 0.735, 0.425)'}})
+      
+      
+
+      TweenMax.to(document.querySelectorAll('.go-tonext span, .dda span'), 0.4, {y : 13, delay : 0.4});
+      TweenMax.to(document.querySelectorAll('#app-about .wld span'), 0.4, {y : 0, delay : 0.4, onComplete: function(){
+        TweenMax.set(document.querySelectorAll('#app-about .wld span'), {css : {'letter-spacing': '0px', 'transition-timing-function': 'cubic-bezier(0.23, 1, 0.32, 1)'}});
+      }});
+      TweenMax.set('.main-bg', {backgroundColor : '#191919', height : '100%', width : 0, x : 0});      
+      TweenMax.to('.preloader span', 1.3, {y : 50});            
+      TweenMax.to('.main-bg', 0.7, {width : '100%', ease: Power3.easeIn});
+      TweenMax.to('.main-bg', 0.7, {css : {transform : 'translateX(-50vw)'}, ease: Power3.easeIn});
+      TweenMax.to(document.querySelectorAll('.go-tonext span'), 0.4, {y : 13, delay : 0.4});      
+      TweenMax.to('.preloader', 0.7, {backgroundColor : '#fff', ease: Power3.easeIn, onComplete : function(){
+        app.$store.commit('set', {
+          name: 'pager',
+          value: '02'
+        });
+        new TimelineMax().to('#logo .gaps', 0.3, {opacity: 0})
+        .to('#logo .logo1', 0.3, {morphSVG: '#logo .logo2'}, 'uno')
+        .to('#logo .number1', 0.3, {morphSVG: '#logo .number2'}, 'uno')
+        .set('header .logo', {width: 50}, 'uno');
+        
+        TweenMax.to('.progress-ring__circle', 0.6, {strokeDashoffset : 0, ease: Power2.easeIn, onComplete : function(){
+          TweenMax.set([document.querySelectorAll('.dda span'), document.querySelectorAll('.go-tonext span')], {css : {'transition-duration' : '0.9s'}});
+          TweenMax.to('.progress-ring__circle', 0.2, {stroke : app.$store.state.cursorColor});
+          TweenMax.to('.cursor-ring', 0.2, {scale : 1});          
+        }});
+        TweenMax.set('#app', {backgroundColor : '#191919'});
+        TweenMax.set('.main-bg', {backgroundColor : 'transparent', width : 0, height : 0});        
+        TweenMax.to('.preloader', 0.7, {height: (app.$store.state.mobile == 'mobile' ? 60 : 90), y : (app.$store.state.mobile == 'mobile' ? -30 : -70), ease: Power3.easeOut, onComplete : function(){
+          new TimelineMax({repeat: -1})
+          .to('.preloader', 1, {height: 0, ease: Power4.easeIn})
+          .set('.preloader', {y: app.$store.state.mobile == 'mobile' ? -90 : -160})
+          .to('.preloader', 1, {height: app.$store.state.mobile == 'mobile' ? 60 : 90, y: app.$store.state.mobile == 'mobile' ? -30 : -70, ease: Power4.easeIn});
+        }});
+        
+        app.$store.commit('about', {
+          name : 'titleAnimate',
+          value : true
+        });
+        new TimelineMax().to(document.querySelectorAll('.about__index_title li:nth-child(odd) span'), 1.5, {x: '0vw', ease: Power4.easeOut}, 'title')
+        .to(document.querySelectorAll('.about__index_title li:nth-child(even) span'), 1.5, {x: '0vw', ease: Power4.easeOut}, 'title')
+        .set(document.querySelectorAll('.about__start_text'), {visibility: 'visible'}, 'title+=1')
+        .staggerFrom(document.querySelectorAll('.about__start_text div'), 0.7, {opacity:0, rotationX:-80, force3D:true, transformOrigin:"top center -50", ease: Power4.easeOut}, 0.02, app.$store.state.mobile ? 'title':'title+=1')
+        .addCallback(function(){   
+          hoverEffect.start();
+          TweenMax.to(document.querySelectorAll('.goteam span'), 0.4, {y: '0%', onComplete: function(){
+            TweenMax.to('.goteam i', 0.4, {scale: 1});
+          }});
+          app.$store.commit('about', {
+            name: 'enterDone',
+            value: true
+          });
+          app.$store.commit('set', {
+            name : 'transitionPage',
+            value : false
+          });          
+          TweenMax.to('.g-pager div', 0.4, {x : '0%', onComplete: function(){
+            TweenMax.to('.g-pager i', 1, { width: '60px', ease: Power4.easeInOut});
+          }});
+          TweenMax.to('.about__bar', 0.7, {height: '90px', onComplete: function(){
+            TweenMax.to('.about__bar i', 0.7, {x: '0%', ease: Power4.easeIn});
+          }});
+          TweenMax.to('.logo', 0.4, {y : 0});
+          TweenMax.to('.follow-us_title span', 0.4, {y : 0, onComplete : function(){
+            TweenMax.to('header .menu span', 0.3, {y : 0});
+            TweenMax.staggerTo(document.querySelectorAll('header nav > div'), 0.3, {y : 0}, 0.1);
+            TweenMax.staggerTo(['.follow-us li.be', '.follow-us li.dr', '.follow-us li.fb', '.follow-us li.ig'], 0.3, {y : 0}, 0.1);
+            app.$store.commit('set', {
+              name : 'firstPage',
+              value : false
+            });
+          }});          
+        }, '-=0.5')
+      }});
+      
   },
   data () {
     return {      

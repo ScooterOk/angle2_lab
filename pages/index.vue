@@ -138,7 +138,101 @@ export default {
   //   }
   // },
   mounted: function(){
-    const app = this;    
+    const app = this;      
+    app.$store.commit('set', {
+      name: 'page',
+      value: 'home'
+    });      
+    app.$store.commit('set', {
+      name: 'cursorColor',
+      value: '#b6b6b6'
+    });
+    app.$store.commit('set', {
+      name: 'cursorHoverColor',
+      value: '#2af8eb'
+    });
+    app.$store.commit('set', {
+      name: 'cursorLongAnimatePermit',
+      value: true
+    });
+    app.$store.commit('set', {
+      name: 'scroll',
+      value: true
+    });
+    TweenMax.set(document.querySelectorAll('.home__title li:nth-child(odd) span'), {x: '-100vw'});
+    TweenMax.set(document.querySelectorAll('.home__title li:nth-child(even) span'), {x: '100vw'});
+    
+    if(app.$store.state.firstPage){
+      /*============= First render ========== */
+      TweenMax.to('.preloader span', 1.3, {y : 50});    
+      TweenMax.set([document.querySelectorAll('.dda span'), document.querySelectorAll('.go-tonext span')], {css : {'letter-spacing': '0px', 'transition-timing-function': 'cubic-bezier(0.23, 1, 0.32, 1)'}});
+      app.$store.commit('set', {
+        name : 'transitionPage',
+        value : false
+      });
+      TweenMax.to('.preloader', 1.3, {height: (app.$store.state.mobile == 'mobile' ? 60 : 90), y : (app.$store.state.mobile == 'mobile' ? -30 : -70), ease: Power3.easeOut, onComplete : function(){                    
+        TweenMax.to('.g-pager div', 0.4, {x : '0%', onComplete: function(){
+          TweenMax.to('.g-pager i', 1, { width: '60px', ease: Power4.easeInOut});
+        }});
+        TweenMax.to('.logo', 0.4, {y : 0});
+        TweenMax.to('.follow-us_title span', 0.4, {y : 0, onComplete : function(){
+            TweenMax.to('header .menu span', 0.3, {y : 0});              
+            TweenMax.staggerTo(document.querySelectorAll('header nav > div'), 0.3, {y : 0}, 0.1);
+          TweenMax.staggerTo(['.follow-us li.be', '.follow-us li.dr', '.follow-us li.fb', '.follow-us li.ig'], 0.3, {y : 0}, 0.1);
+        }});
+      }});
+      
+      new TimelineMax().to(document.querySelectorAll('.home__title li:nth-child(odd) span'), 1.5, {x: '0vw', force3D: true, ease: Power4.easeOut}, 'title')
+      .to(document.querySelectorAll('.home__title li:nth-child(even) span'), 1.5, {x: '0vw', force3D: true, ease: Power4.easeOut}, 'title')
+
+      
+      
+      app.$store.commit('set', {
+        name : 'firstPage',
+        value : false
+      });        
+    }else{
+      /*============= Transition render ========== */        
+      TweenMax.set('#app-start .text', {visibility: 'hidden'})
+      TweenMax.set('.main-bg', {backgroundColor : '#ffffff', height : '100%', width : 0, x : 0});        
+      TweenMax.to('.main-bg', 0.7, {width : '100%', ease: Power3.easeIn});
+      TweenMax.to('.main-bg', 0.7, {css : {transform : 'translateX(-50vw)'}, ease: Power3.easeIn});
+      TweenMax.to(document.querySelectorAll('.go-tonext span'), 0.4, {y : 0, delay : 0.4});
+      TweenMax.to('.preloader', 0.7, {backgroundColor : '#000000', ease: Power3.easeIn, onComplete : function(){
+        app.$store.commit('set', {
+          name: 'pager',
+          value: '01'
+        });
+        new TimelineMax().set('header .logo', {width: 126})
+        .to('#logo .logo1', 0.3, {morphSVG: '#logo .logo1'}, 'uno')
+        .to('#logo .number1', 0.3, {morphSVG: '#logo .number1'}, 'uno')
+        .to('#logo .gaps', 0.3, {opacity: 1});
+        TweenMax.set('#app', {backgroundColor : '#ffffff'});
+        TweenMax.set('.main-bg', {backgroundColor : 'transparent', width : 0, height : 0});
+        TweenMax.set([document.querySelectorAll('.dda span'), document.querySelectorAll('.go-tonext span')], {css : {'letter-spacing': '0px', 'transition-timing-function': 'cubic-bezier(0.23, 1, 0.32, 1)'}});
+        app.$store.commit('set', {
+          name : 'transitionPage',
+          value : false
+        });
+        TweenMax.to('.preloader', 0.7, {height: (app.$store.state.mobile == 'mobile' ? 60 : 90), y : (app.$store.state.mobile == 'mobile' ? -30 : -70), ease: Power3.easeOut, onComplete:function(){
+          app.$store.commit('set', {
+            name : 'transitionPage',
+            value : false
+          });
+          TweenMax.to('.g-pager div', 0.4, {x : '0%', onComplete: function(){
+            TweenMax.to('.g-pager i', 1, { width: '60px', ease: Power4.easeInOut});
+          }});
+          TweenMax.to('.logo', 0.4, {y : 0});
+          TweenMax.to('.follow-us_title span', 0.4, {y : 0, onComplete : function(){
+              TweenMax.to('header .menu span', 0.3, {y : 0});              
+              TweenMax.staggerTo(document.querySelectorAll('header nav > div'), 0.3, {y : 0}, 0.1);
+            TweenMax.staggerTo(['.follow-us li.be', '.follow-us li.dr', '.follow-us li.fb', '.follow-us li.ig'], 0.3, {y : 0}, 0.1);
+          }});
+        }});
+        new TimelineMax().to(document.querySelectorAll('.home__title li:nth-child(odd) span'), 1.5, {x: '0vw', force3D: true, ease: Power4.easeOut}, 'title')
+      .to(document.querySelectorAll('.home__title li:nth-child(even) span'), 1.5, {x: '0vw', force3D: true, ease: Power4.easeOut}, 'title')          
+      }});
+    }     
   },
   data () {
     return {
@@ -184,7 +278,7 @@ export default {
     }
   },  
   watch : {
-    mousemove: function(val){
+    mousemove: function(val){      
       const app = this;      
       if(app.cursorLongAnimate || app.transitionPage)return;
         var rootX = -((window.innerWidth / 2) - val.x);
@@ -204,6 +298,7 @@ export default {
       }, force3D: true});
     },
     cursorLongAnimate: function(val){
+      console.log('cursorLongAnimate', val);
       const app = this;
       if(val){        
         TweenMax.to(document.querySelectorAll('.home__title li:nth-child(odd) span'), 2.1, {x : '-102vw', ease: Power3.easeInOut});
@@ -223,6 +318,7 @@ export default {
     mode : 'out-in',
     css : false,
     enter : function(el, done){
+      console.log('First render!!!!!!!!');
       const app = this;
       app.$store.commit('set', {
         name: 'page',
@@ -246,6 +342,7 @@ export default {
       });
       TweenMax.set(document.querySelectorAll('.home__title li:nth-child(odd) span'), {x: '-100vw'});
       TweenMax.set(document.querySelectorAll('.home__title li:nth-child(even) span'), {x: '100vw'});
+      
       if(app.$store.state.firstPage){
         /*============= First render ========== */
         TweenMax.to('.preloader span', 1.3, {y : 50});    

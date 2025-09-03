@@ -19,153 +19,153 @@ export default {
       change: true,
       batchList: [
         {
-          src: './img/projects/4peak.jpg',
+          src: '/img/projects/4peak.jpg',
           type: 'img'
         },
         {
-          src: './img/projects/reaktivate.jpg',
+          src: '/img/projects/reaktivate.jpg',
           type: 'img'
         },
         {
-          src: './img/projects/floston.jpg',
+          src: '/img/projects/floston.jpg',
           type: 'img'
         },
         {
-          src: './img/projects/augmania.jpg',
+          src: '/img/projects/augmania.jpg',
           type: 'img'
         },
         {
-          src: './img/projects/sparky.jpg',
+          src: '/img/projects/sparky.jpg',
           type: 'img'
         },
         {
-          src: './img/projects/cavio.jpg',
-          type: 'img'
-        },
-
-
-        {
-          src: './img/projects/4peak/preview.jpg',
-          type: 'img'
-        },
-        {
-          src: './img/projects/reactivate/preview.jpg',
-          type: 'img'
-        },
-        {
-          src: './img/projects/floston/preview.jpg',
-          type: 'img'
-        },
-        {
-          src: './img/projects/sparky/preview.jpg',
-          type: 'img'
-        },
-        {
-          src: './img/projects/cavio/preview.jpg',
+          src: '/img/projects/cavio.jpg',
           type: 'img'
         },
 
 
+        {
+          src: '/img/projects/4peak/preview.jpg',
+          type: 'img'
+        },
+        {
+          src: '/img/projects/reactivate/preview.jpg',
+          type: 'img'
+        },
+        {
+          src: '/img/projects/floston/preview.jpg',
+          type: 'img'
+        },
+        {
+          src: '/img/projects/sparky/preview.jpg',
+          type: 'img'
+        },
+        {
+          src: '/img/projects/cavio/preview.jpg',
+          type: 'img'
+        },
+
+
 
 
         {
-          src: './img/displacement/pattern2.png',
+          src: '/img/displacement/pattern2.png',
           type: 'img'
         },
         {
-          src: './img/displacement/pattern3.png',
+          src: '/img/displacement/pattern3.png',
           type: 'img'
         },
         {
-          src: './img/displacement/pattern4.png',
+          src: '/img/displacement/pattern4.png',
           type: 'img'
         },
         {
-          src: './img/displacement/start.png',
+          src: '/img/displacement/start.png',
           type: 'img'
         },        
         {
-          src: './img/about/bg_team.jpg',
+          src: '/img/about/bg_team.jpg',
           type: 'img'
         },
         {
-          src: './img/about/alex_preview.jpg',
+          src: '/img/about/alex_preview.jpg',
           type: 'img'
         },
         {
-          src: './img/about/alex.jpg',
+          src: '/img/about/alex.jpg',
           type: 'img'
         },
         {
-          src: './img/about/dmitriy_preview.jpg',
+          src: '/img/about/dmitriy_preview.jpg',
           type: 'img'
         },
         {
-          src: './img/about/dmitriy.jpg',
+          src: '/img/about/dmitriy.jpg',
           type: 'img'
         },
         {
-          src: './img/about/jane_preview.jpg',
+          src: '/img/about/jane_preview.jpg',
           type: 'img'
         },
         {
-          src: './img/about/jane.jpg',
+          src: '/img/about/jane.jpg',
           type: 'img'
         },
         {
-          src: './img/about/kristina_preview.jpg',
+          src: '/img/about/kristina_preview.jpg',
           type: 'img'
         },
         {
-          src: './img/about/kristina.jpg',
+          src: '/img/about/kristina.jpg',
           type: 'img'
         },
         {
-          src: './img/about/lazey_preview.jpg',
+          src: '/img/about/lazey_preview.jpg',
           type: 'img'
         },
         {
-          src: './img/about/lazey.jpg',
+          src: '/img/about/lazey.jpg',
           type: 'img'
         },
         {
-          src: './img/about/nina_preview.jpg',
+          src: '/img/about/nina_preview.jpg',
           type: 'img'
         },
         {
-          src: './img/about/nina.jpg',
+          src: '/img/about/nina.jpg',
           type: 'img'
         },
         {
-          src: './img/about/roman_preview.jpg',
+          src: '/img/about/roman_preview.jpg',
           type: 'img'
         },
         {
-          src: './img/about/roman.jpg',
+          src: '/img/about/roman.jpg',
           type: 'img'
         },
         {
-          src: './img/about/sergey_preview.jpg',
+          src: '/img/about/sergey_preview.jpg',
           type: 'img'
         },
         {
-          src: './img/about/sergey.jpg',
+          src: '/img/about/sergey.jpg',
           type: 'img'
         },
         {
-          src: './img/about/tanya_preview.jpg',
+          src: '/img/about/tanya_preview.jpg',
           type: 'img'
         },
         {
-          src: './img/about/tanya.jpg',
+          src: '/img/about/tanya.jpg',
           type: 'img'
         },
         {
-          src: './img/about/viktor_preview.jpg',
+          src: '/img/about/viktor_preview.jpg',
           type: 'img'
         },
         {
-          src: './img/about/viktor.jpg',
+          src: '/img/about/viktor.jpg',
           type: 'img'
         }        
       ]
@@ -183,7 +183,7 @@ export default {
     const app = this;
     let done = 0;
     //app.init();
-    let startScripts = ['./js/TweenMax.min.js', './js/MorphSVGPlugin.min.js', './js/SplitText.min.js', './js/ModifiersPlugin.min.js', './js/three.min.js', './js/smooth-scrollbar.js']
+    let startScripts = ['/js/TweenMax.min.js', '/js/MorphSVGPlugin.min.js', '/js/SplitText.min.js', '/js/ModifiersPlugin.min.js', '/js/three.min.js', '/js/smooth-scrollbar.js']
     
     let font = document.createElement('link');
     font.rel = 'stylesheet';
@@ -195,10 +195,10 @@ export default {
       script.src = startScripts[i];
       document.head.appendChild(script);
       script.onload = function() { 
-        done++;
-        if(startScripts.length == done)app.init();        
+        done++;        
+        if(startScripts.length == done)app.init();
       }
-    }    
+    }
     return;
 
 
@@ -213,7 +213,9 @@ export default {
   },
   methods: {
     init: function(){
-      const app = this;      
+      console.log('init!!!!!');
+      
+      const app = this;
       app.$root.longClickAnimation = new TimelineMax();
       app.$store.commit('set', {
         name : 'tweenReady',
@@ -250,7 +252,7 @@ export default {
               .to('.start-a-project .icon', 0.9, {y: '0%'})
               .to(document.querySelectorAll('.start-a-project .button .start'), 1.3, {y: '0%', ease: Power3.easeOut}, '+=0.2');
               TweenMax.to([document.querySelectorAll('.dda span'), document.querySelectorAll('.go-tonext span')], 2, {y : 0, ease: Power4.easeInOut});
-              TweenMax.to('.preloader', 1.5, { height: '100%', ease: Power3.easeInOut, onComplete : function(){
+              TweenMax.to('.preloader', 1.5, { height: '100%', ease: Power3.easeInOut, onComplete : function(){                
                 app.$store.commit('set', {
                   name : 'appStart',
                   value : true

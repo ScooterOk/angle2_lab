@@ -91,7 +91,109 @@
 export default {
   mounted : function () {
     const app = this;
-    var split = new SplitText(".services__title h2 span", {type: 'chars'});
+    app.$store.commit('set', {
+        name: 'page',
+        value: 'services'
+      });      
+      app.$store.commit('set', {
+        name: 'cursorColor',
+        value: '#b6b6b6'
+      });
+      app.$store.commit('set', {
+        name: 'cursorHoverColor',
+        value: '#fff'
+      });      
+      app.$store.commit('set', {
+        name: 'cursorLongAnimatePermit',
+        value: true
+      });
+      app.$store.commit('set', {
+        name: 'scroll',
+        value: true
+      });
+      app.$store.commit('services', {
+        name : 'titleAnimate',
+        value : false
+      });      
+      app.$store.commit('services', {
+        name : 'enterDone',
+        value : false
+      });   
+      
+      
+      TweenMax.set(document.querySelectorAll('#app-services .cww span'), {y : -13});
+      TweenMax.set(document.querySelectorAll('.services__title .head:nth-child(1) span'), {x: app.$store.state.mobile ? '104vw' : '102vw'});
+      TweenMax.set(document.querySelectorAll('.services__title .head:nth-child(2) span'), {x: app.$store.state.mobile ? '104vw' : '102vw'});
+      TweenMax.set(document.querySelectorAll('.services__title .list span'), {x: app.$store.state.mobile ? '104vw' : '102vw'});
+
+      TweenMax.to(document.querySelectorAll('.go-tonext span, .dda span'), 0.4, {y : 13, delay : 0.4});
+      TweenMax.to(document.querySelectorAll('#app-services .cww span'), 0.4, {y : 0, delay : 0.4, onComplete: function(){
+        TweenMax.set(document.querySelectorAll('#app-services .cww span'), {css : {'letter-spacing': '0px', 'transition-timing-function': 'cubic-bezier(0.23, 1, 0.32, 1)'}});
+      }});
+
+
+      TweenMax.set('.main-bg', {backgroundColor : '#2af8eb', height : '100%', width : 0, x : 0});
+      TweenMax.to('.preloader span', 1.3, {y : 50});            
+      TweenMax.to('.main-bg', 0.7, {width : '100%', ease: Power3.easeIn});
+      TweenMax.to('.main-bg', 0.7, {css : {transform : 'translateX(-50vw)'}, ease: Power3.easeIn});
+      TweenMax.to(document.querySelectorAll('.go-tonext span'), 0.4, {y : 13, delay : 0.4});      
+      TweenMax.to('.preloader', 0.7, {backgroundColor : '#191919', ease: Power3.easeIn, onComplete : function(){
+        app.$store.commit('set', {
+          name: 'pager',
+          value: '03'
+        });
+        new TimelineMax().to('#logo .gaps', 0.3, {opacity: 0})
+        .to('#logo .logo1', 0.3, {morphSVG: '#logo .logo2'}, 'uno')
+        .to('#logo .number1', 0.3, {morphSVG: '#logo .number2'}, 'uno')
+        .set('header .logo', {width: 50}, 'uno');
+          
+        TweenMax.to('.progress-ring__circle', 0.6, {strokeDashoffset : 0, ease: Power2.easeIn, onComplete : function(){
+          TweenMax.set([document.querySelectorAll('.dda span'), document.querySelectorAll('.go-tonext span')], {css : {'transition-duration' : '0.9s'}});          
+          TweenMax.to('.progress-ring__circle', 0.2, {stroke : app.$store.state.cursorColor});
+          TweenMax.to('.cursor-ring', 0.2, {scale : 1});
+        }});
+
+        TweenMax.set('#app', {backgroundColor : '#2af8eb'});
+        TweenMax.set('.main-bg', {backgroundColor : 'transparent', width : 0, height : 0});        
+        TweenMax.to('.preloader', 0.7, {height: (app.$store.state.mobile == 'mobile' ? 60 : 90), y : (app.$store.state.mobile == 'mobile' ? -30 : -70), ease: Power3.easeOut, onComplete : function(){          
+          
+          new TimelineMax({repeat: -1})
+          .to('.preloader', 1, {height: 0, ease: Power4.easeIn})
+          .set('.preloader', {y: app.$store.state.mobile == 'mobile' ? -90 : -160})
+          .to('.preloader', 1, {height: app.$store.state.mobile == 'mobile' ? 60 : 90, y: app.$store.state.mobile == 'mobile' ? -30 : -70, ease: Power4.easeIn});
+
+        }});        
+        app.$store.commit('services', {
+          name : 'titleAnimate',
+          value : true
+        });
+        new TimelineMax().to(document.querySelectorAll('.services__title .head span'), 1.5, {x: '0vw', ease: Power4.easeOut, force3D: true}, 'title')
+        .staggerTo(document.querySelectorAll('.services__title .list .left span'), 1.4, {x : '0vw', ease: Power3.easeInOut, force3D: true}, 0.1, 'title+=0.5')
+        .staggerTo(document.querySelectorAll('.services__title .list .right span'), 1.4, {x : '0vw', ease: Power3.easeInOut, force3D: true}, 0.1, 'title+=0.5')
+        .addCallback(function(){
+          app.$store.commit('services', {
+            name : 'enterDone',
+            value : true
+          });
+          TweenMax.to('.g-pager div', 0.4, {x : '0%', onComplete: function(){
+            TweenMax.to('.g-pager i', 1, { width: '60px', ease: Power4.easeInOut});
+          }});
+          TweenMax.to('.logo', 0.4, {y : 0});
+          TweenMax.to('.follow-us_title span', 0.4, {y : 0, onComplete : function(){
+            TweenMax.to('header .menu span', 0.3, {y : 0});
+            TweenMax.staggerTo(document.querySelectorAll('header nav > div'), 0.3, {y : 0}, 0.1);
+            TweenMax.staggerTo(['.follow-us li.be', '.follow-us li.dr', '.follow-us li.fb', '.follow-us li.ig'], 0.3, {y : 0}, 0.1);
+            app.$store.commit('set', {
+              name : 'firstPage',
+              value : false
+            });
+            app.$store.commit('set', {
+              name : 'transitionPage',
+              value : false
+            });
+          }});
+        })        
+      }});
     
   },
   data () {

@@ -98,6 +98,105 @@ export default {
           app.scrollbarTop = status.offset.y;
         });
       }, 1000);
+
+      app.$store.commit('set', {
+        name: 'page',
+        value: 'projects'
+      });      
+      app.$store.commit('set', {
+        name: 'cursorColor',
+        value: '#b6b6b6'
+      });
+      app.$store.commit('set', {
+        name: 'cursorHoverColor',
+        value: '#2af8eb'
+      });
+      app.$store.commit('set', {
+        name: 'cursorLongAnimate',
+        value: false
+      });
+      app.$store.commit('set', {
+        name: 'cursorLongAnimatePermit',
+        value: false
+      });
+      app.$store.commit('set', {
+        name: 'scroll',
+        value: true
+      });
+      TweenMax.set('.main-bg', {backgroundColor : '#191919', height : '100%', width : 0, x : 0});
+      TweenMax.set('.projects__details', {x : '100%'});
+      TweenMax.to('.preloader span', 1.3, {y : 50});            
+      TweenMax.to('.main-bg', 0.7, {width : '100%', ease: Power3.easeIn});
+      TweenMax.to('.main-bg', 0.7, {css : {transform : 'translateX(-50vw)'}, ease: Power3.easeIn});
+      TweenMax.to(document.querySelectorAll('.go-tonext span'), 0.4, {y : 13, delay : 0.4});
+      TweenMax.to('.preloader', 0.7, {backgroundColor : '#fff', ease: Power3.easeIn, onComplete : function(){
+        app.$store.commit('set', {
+          name: 'pager',
+          value: '04'
+        });
+        new TimelineMax().to('#logo .gaps', 0.3, {opacity: 0})
+        .to('#logo .logo1', 0.3, {morphSVG: '#logo .logo2'}, 'uno')
+        .to('#logo .number1', 0.3, {morphSVG: '#logo .number2'}, 'uno')
+        .set('header .logo', {width: 50}, 'uno');        
+          TweenMax.to('.progress-ring__circle', 0.6, {strokeDashoffset : 0, ease: Power2.easeIn, onComplete : function(){
+            TweenMax.to(document.querySelectorAll('.cursor-ring__arrow'), 0.7, {opacity: 1});
+            TweenMax.set([document.querySelectorAll('.dda span'), document.querySelectorAll('.go-tonext span')], {css : {'transition-duration' : '0.9s'}});          
+            TweenMax.to('.progress-ring__circle', 0.2, {stroke : app.$store.state.cursorColor});
+            TweenMax.to('.cursor-ring', 0.2, {scale : 1});
+          }});
+        TweenMax.set('#app', {backgroundColor : '#191919'});
+        TweenMax.set('.main-bg', {backgroundColor : 'transparent', width : 0, height : 0});
+        TweenMax.set(document.querySelectorAll('.dda span'), {css : {'letter-spacing': '0px', 'transition-timing-function': 'cubic-bezier(0.23, 1, 0.32, 1)'}});
+        TweenMax.to('.preloader', 0.7, {height: (app.$store.state.mobile == 'mobile' ? 60 : 90), y : (app.$store.state.mobile == 'mobile' ? -30 : -70), ease: Power3.easeOut, onComplete : function(){
+          new TimelineMax({repeat: -1})
+          .to('.preloader', 1, {height: 0, ease: Power4.easeIn})
+          .set('.preloader', {y: app.$store.state.mobile == 'mobile' ? -90 : -160})
+          .to('.preloader', 1, {height: app.$store.state.mobile == 'mobile' ? 60 : 90, y: app.$store.state.mobile == 'mobile' ? -30 : -70, ease: Power4.easeIn});          
+          
+          TweenMax.to('.g-pager div', 0.4, {x : '0%', onComplete: function(){
+            TweenMax.to('.g-pager i', 1, { width: '60px', ease: Power4.easeInOut});
+          }});
+          TweenMax.to('.logo', 0.4, {y : 0});
+          TweenMax.to('.follow-us_title span', 0.4, {y : 0, onComplete : function(){
+            TweenMax.to('header .menu span', 0.3, {y : 0});
+            TweenMax.staggerTo(document.querySelectorAll('header nav > div'), 0.3, {y : 0}, 0.1);
+            TweenMax.staggerTo(['.follow-us li.be', '.follow-us li.dr', '.follow-us li.fb', '.follow-us li.ig'], 0.3, {y : 0}, 0.1);
+            app.$store.commit('set', {
+              name : 'firstPage',
+              value : false
+            });
+          }});
+        }});
+        TweenMax.set(document.querySelectorAll('.projects__list h2 span'), {x:'100vw', opacity: 0.1});
+        TweenMax.set('.projects__list', {visibility : "visible"});
+        TweenMax.set('.projects__details_slide-dots', {height: '0%'});
+        TweenMax.set('.projects__details_slide-dots i', {x: '100%'});
+        new TimelineMax().staggerTo(document.querySelectorAll('.projects__list .left span'), 1.4, {x : 0, ease: Power3.easeInOut, force3D: true}, 0.1, 'list')
+        .staggerTo(document.querySelectorAll('.projects__list .right span'), 1.4, {x : 0, ease: Power3.easeInOut, force3D: true}, 0.1, 'list');        
+        TweenMax.to('.projects__details', 1.4, {x : '0%', ease: Power3.easeInOut, delay: 0.6, onComplete: function(){
+          TweenMax.set('.projects__details_photo canvas', {opacity:1});
+          document.querySelector('.projects__list li:first-child').classList.add('hover');            
+          //TweenMax.to(document.querySelectorAll('.projects__list li:first-child .tech b'), 0.6, {x : '0%', ease: Power3.easeInOut});
+          TweenMax.to(document.querySelector('.projects__list li:first-child .left span .sign .plus'), 0.4, {x: '-100%', ease: Power3.easeInOut, force3D: true});
+          TweenMax.to(document.querySelector('.projects__list li:first-child .left span .sign .minus'), 0.4, {x: '-100%', ease: Power3.easeInOut, force3D: true});
+          TweenMax.to(document.querySelector('.projects__list li:first-child .left span'), 0.6, {x : window.innerWidth / 100 * 6.2, color : '#ffffff', opacity : 1, ease: Power3.easeInOut, force3D: true});
+          TweenMax.to(document.querySelector('.projects__list li:first-child .right span'), 0.6, {x : window.innerWidth / 100 * 6.2, color : '#1d1d1d', opacity : 1, ease: Power3.easeInOut, force3D: true, onComplete: function(){
+            app.$store.commit('set', {
+              name : 'transitionPage',
+              value : false
+            });
+            app.$store.commit('projects', {
+              name: 'scrollListPermit',
+              value: true
+            });
+          }});          
+          TweenMax.to('.projects__details_slide-dots', 0.7, {height: '22%', onComplete: function(){
+            TweenMax.to('.projects__details_slide-dots i', 0.7, {x: '0%', ease: Power4.easeIn});
+          }});            
+          hoverEffect.start();
+          done();
+        }});          
+      }}); 
       
     },
     data: function(){

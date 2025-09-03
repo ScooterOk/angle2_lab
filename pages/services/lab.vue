@@ -73,6 +73,86 @@ export default {
         alwaysShowTracks: true
       });
     }
+    app.$store.commit('set', {
+        name: 'page',
+        value: 'services-team'
+      });      
+      app.$store.commit('set', {
+        name: 'cursorColor',
+        value: '#b6b6b6'
+      });
+      app.$store.commit('set', {
+        name: 'cursorHoverColor',
+        value: '#2af8eb'
+      });      
+      app.$store.commit('set', {
+        name: 'cursorLongAnimatePermit',
+        value: false
+      });
+      app.$store.commit('set', {
+        name: 'scroll',
+        value: false
+      });      
+      TweenMax.set('#app-services-design .back a span', {y: '100%'});
+      TweenMax.set('#app-services-design .back i', {scale: 0});
+      TweenMax.set(document.querySelectorAll('.services__title span'), {x: app.$store.state.mobile ? '104vw' : '102vw', force3D: true});
+      TweenMax.set(document.querySelectorAll('#services-scroll'), {visibility: 'hidden'});      
+      TweenMax.set('.link span', {y: '100%'});
+      TweenMax.set('.link .line', {width: '0%'});
+      TweenMax.set('.link .angle', {opacity: 0});
+
+      TweenMax.to(document.querySelectorAll('.go-tonext span, .dda span'), 0.4, {y : 13, delay : 0.4});
+      TweenMax.set('.main-bg', {backgroundColor : '#fff', height : '100%', width : 0, x : 0});
+      TweenMax.to('.preloader span', 1.3, {y : 50});            
+      TweenMax.to('.main-bg', 0.7, {width : '100%', ease: Power3.easeIn});
+      TweenMax.to('.main-bg', 0.7, {css : {transform : 'translateX(-50vw)'}, ease: Power3.easeIn});
+      TweenMax.to(document.querySelectorAll('.go-tonext span'), 0.4, {y : 13, delay : 0.4});      
+      TweenMax.to('.preloader', 0.7, {backgroundColor : '#191919', ease: Power3.easeIn, onComplete : function(){        
+        TweenMax.to('.g-pager i', 1, { width: '0px', ease: Power4.easeInOut, onComplete(){
+          TweenMax.to('.g-pager div', 0.4, {x : '-100%'});  
+        }});
+        new TimelineMax().to('#logo .gaps', 0.3, {opacity: 0})
+        .to('#logo .logo1', 0.3, {morphSVG: '#logo .logo2'}, 'uno')
+        .to('#logo .number1', 0.3, {morphSVG: '#logo .number2'}, 'uno')
+        .set('header .logo', {width: 50}, 'uno');
+        new TimelineMax().staggerTo(['.follow-us li.be', '.follow-us li.dr', '.follow-us li.fb', '.follow-us li.ig'], 0.3, {y : 20}, 0.07)
+        .to('.follow-us_title span', 0.4, {y : 10})
+        
+          
+        TweenMax.to('.progress-ring__circle', 0.6, {strokeDashoffset : 0, ease: Power2.easeIn, onComplete : function(){
+          TweenMax.set([document.querySelectorAll('.dda span'), document.querySelectorAll('.go-tonext span')], {css : {'transition-duration' : '0.9s'}});          
+          TweenMax.to('.progress-ring__circle', 0.2, {stroke : app.$store.state.cursorColor});
+          TweenMax.to('.cursor-ring', 0.2, {scale : 1});
+        }});
+
+        TweenMax.set('#app', {backgroundColor : '#fff'});
+        TweenMax.set('.main-bg', {backgroundColor : 'transparent', width : 0, height : 0});                
+        TweenMax.to('.preloader', 0.7, {height: 0, y : 0, ease: Power3.easeOut, onComplete : function(){
+          app.$store.commit('set', {
+            name : 'transitionPage',
+            value : false
+          });          
+        }});
+      }});
+
+      
+      new TimelineMax({delay: 0.4}).staggerTo(document.querySelectorAll('.services__title .left span'), 1.4, {x : '0vw', ease: Power3.easeInOut}, 0.1, 'title')
+      .staggerTo(document.querySelectorAll('.services__title .right span'), 1.4, {x : '0vw', ease: Power3.easeInOut}, 0.1, 'title')
+      .set(document.querySelectorAll('#services-scroll'), {visibility: 'visible'}, 'title+=1.2')
+      .staggerFrom(document.querySelectorAll('#services-scroll div:not(.scroll-content)'), 0.4, {opacity:0, rotationX:-80, force3D:true, transformOrigin:"top center -50", ease: Power4.easeOut}, 0.01, 'title+=1.2')      
+      .addCallback(function(){
+        new TimelineMax()        
+        .staggerTo(document.querySelectorAll('header nav > div'), 0.3, {y : 0}, 0.1, 'uno')
+        .to('header .menu span', 0.3, {y : 0}, 'uno')
+        .to('.logo', 0.4, {y : 0}, 'uno')
+        .to('.back a span', 0.4, {y: '0%'}, 'uno+=0.5')
+        .to('.back i', 0.4, {scale: 1}, 'uno+=0.5')
+        .to('.link a span', 0.4, {y: '0%'}, 'uno+=0.5')
+        .to('.link .line', 0.4, {width: '100%', ease: Power4.easeInOut})
+        .fromTo('.link .angle', 0.4, {opacity: 0, x: '-50%', y: '50%'}, {opacity: 1, x: '0%', y: '0%', ease: Power4.easeInOut})
+        
+      }, 'title+=1.4')
+      .set('.scrollbar-track-y', {opacity: 1})
     
     
     

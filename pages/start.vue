@@ -146,7 +146,110 @@
 <script>
 import axios from 'axios';
 export default {
-  mounted: function() {},
+  mounted: function() {
+    const app = this;      
+      //var app = this.$store.state.pageModule;
+
+      app.$store.commit("set", {
+        name: "page",
+        value: "start-project"
+      });
+      app.$store.commit("set", {
+        name: "cursorColor",
+        value: "#b6b6b6"
+      });
+      app.$store.commit("set", {
+        name: "cursorHoverColor",
+        value: "#fff"
+      });
+      app.$store.commit('set', {
+        name: 'cursorLongAnimatePermit',
+        value: false
+      });     
+      
+      TweenMax.set(document.querySelectorAll('#app-start-projact .lct span'), {y : -13});
+      TweenMax.set(document.querySelectorAll('#app-start-projact .title span'), {x: '102vw', force3D: true});
+      TweenMax.set(document.querySelectorAll('#app-start-projact .title.thank-you span'), {x: '-102vw', force3D: true});
+      TweenMax.set(document.querySelectorAll('.form__row i'), {width: '0%'});
+      TweenMax.set(document.querySelectorAll('.form__row label span'), {y: '100%'});
+      TweenMax.set(document.querySelectorAll('.form-button'), {y: '-100%'});
+      TweenMax.set(document.querySelectorAll('.form-select, .form__row.select label span'), {y: '100%'});      
+
+      TweenMax.to(document.querySelectorAll('.go-tonext span, .dda span'), 0.4, {y : 13, delay : 0.4});
+      if(!app.$store.state.mobile || app.$store.state.mobile == 'tablet'){
+        TweenMax.to(document.querySelectorAll('#app-start-projact .lct span'), 0.4, {y : 0, delay : 0.4, onComplete: function(){
+          TweenMax.set(document.querySelectorAll('#app-start-projact .lct span'), {css : {'letter-spacing': '0px', 'transition-timing-function': 'cubic-bezier(0.23, 1, 0.32, 1)'}});
+        }});
+      }else{        
+        TweenMax.set(document.querySelectorAll('#app-start-projact .lct span'), {css : {'letter-spacing': '0px', 'transition-timing-function': 'cubic-bezier(0.23, 1, 0.32, 1)'}});
+      }
+      
+
+
+      TweenMax.set('.main-bg', {backgroundColor : '#2af8eb', height : '100%', width : 0, x : 0});
+      TweenMax.to('.preloader span', 1.3, {y : 50});            
+      TweenMax.to('.main-bg', 0.7, {width : '100%', ease: Power3.easeIn});
+      TweenMax.to('.main-bg', 0.7, {css : {transform : 'translateX(-50vw)'}, ease: Power3.easeIn});
+      TweenMax.to(document.querySelectorAll('.go-tonext span'), 0.4, {y : 13, delay : 0.4});      
+      TweenMax.to('.preloader', 0.7, {backgroundColor : '#191919', ease: Power3.easeIn, onComplete : function(){
+        TweenMax.to('.g-pager i', 1, { width: '0px', ease: Power4.easeInOut, onComplete(){
+            TweenMax.to('.g-pager div', 0.4, {x : '-100%'});  
+          }});
+      //   new TimelineMax()
+      // .to('.icon .l-normal', 0.3, {morphSVG: '.icon .l-close'}, 'icon')
+      // .to('.icon .r-normal', 0.3, {morphSVG: '.icon .r-close'}, 'icon')
+      // .to('.icon .r-normal', 0.3, {rotation: -45}, 'icon')
+      // .to(document.querySelectorAll('.start-a-project .button .start'), 0.4, {y: '-100%'}, 'icon')
+      // .to(document.querySelectorAll('.start-a-project .button .close'), 0.4, {y: '-0%'}, 'icon');
+
+      TweenMax.to('header .menu span', 0.3, {y : 0});
+      TweenMax.staggerTo(document.querySelectorAll('header nav > div'), 0.3, {y : 35}, 0.1);      
+      //TweenMax.staggerTo(['.follow-us li.be', '.follow-us li.dr', '.follow-us li.fb', '.follow-us li.ig'], 0.3, {y : 0}, 0.1);
+      app.$store.commit('set', {
+        name : 'firstPage',
+        value : false
+      });
+        app.$store.commit('set', {
+          name: 'pager',
+          value: '05'
+        });
+          
+        TweenMax.to('.progress-ring__circle', 0.6, {strokeDashoffset : 0, ease: Power2.easeIn, onComplete : function(){
+          TweenMax.set([document.querySelectorAll('.dda span'), document.querySelectorAll('.go-tonext span')], {css : {'transition-duration' : '0.9s'}});          
+          TweenMax.to('.progress-ring__circle', 0.2, {stroke : app.$store.state.cursorColor});
+          TweenMax.to('.cursor-ring', 0.2, {scale : 1});
+        }});
+
+        TweenMax.set('#app', {backgroundColor : '#2af8eb'});
+        TweenMax.set('.main-bg', {backgroundColor : 'transparent', width : 0, height : 0});
+          app.$store.commit('set', {
+          name : 'startProject',
+          value : true
+        });         
+        TweenMax.to('.preloader', 0.7, {height: 0, y : 0, ease: Power3.easeOut, onComplete : function(){          
+          app.$store.commit('set', {
+            name : 'transitionPage',
+            value : false
+          });   
+          new TimelineMax().to('#logo .gaps', 0.3, {opacity: 0})
+        .to('#logo .logo1', 0.3, {morphSVG: '#logo .logo2'}, 'uno')
+        .to('#logo .number1', 0.3, {morphSVG: '#logo .number2'}, 'uno');       
+        }});        
+      }});
+      new TimelineMax({delay: 0.4})
+        .staggerTo(document.querySelectorAll('#app-start-projact .title:not(.thank-you) .left span'), 1.4, {x : '0vw', ease: Power3.easeInOut}, 0.1, 'title')
+        .staggerTo(document.querySelectorAll('#app-start-projact .title:not(.thank-you) .right span'), 1.4, {x : '0vw', ease: Power3.easeInOut}, 0.1, 'title')
+        .to(document.querySelectorAll('.form__row i, .form-select > i'), 0.7, {width: '100%', ease: Power3.easeInOut})
+        .to(document.querySelectorAll('.form__row label span'), 0.4, {y: '0%'}, 'label')
+        .to(document.querySelectorAll('.form-select'), 0.4, {y: '0%'}, 'label')
+        .to(document.querySelectorAll('.form-button'), 0.4, {y: '0%'}, 'label')
+        .addCallback(function(){
+            TweenMax.to('.logo', 0.4, {y : 0});
+            TweenMax.to('.follow-us_title span', 0.4, {y : 0, onComplete : function(){              
+              TweenMax.staggerTo(['.follow-us li.be', '.follow-us li.dr', '.follow-us li.fb', '.follow-us li.ig'], 0.3, {y : 0}, 0.1);
+            }});
+        }) 
+  },
   data: function() {
     return {
       selectActive : false,

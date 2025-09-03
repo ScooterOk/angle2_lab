@@ -137,7 +137,7 @@
 
     <!-- ============ TEAM PROFILE =============== -->
     <article class="about__profile">      
-      <div class="photo" data-displacement="./img/displacement/pattern3.png" data-intensity="-0.65" data-speedIn="1" data-speedOut="1" data-startImage="./img/displacement/start.png">                
+      <div class="photo" data-displacement="/img/displacement/pattern3.png" data-intensity="-0.65" data-speedIn="1" data-speedOut="1" data-startImage="/img/displacement/start.png">                
         <img v-for="(item, index) in randomList" :key="index" :src="item.photo" alt="">
         <div class="skill">
           <span>{{skill}}</span>
@@ -168,7 +168,136 @@ export default {
       app.scrollbar.addListener((status) => {
         app.scrollbarTop = status.offset.y;
       });
-    }, 500);    
+    }, 500);  
+    app.$store.commit('set', {
+        name: 'page',
+        value: 'about'
+      });
+      app.$store.commit('set', {
+        name: 'cursorColor',
+        value: '#b6b6b6'
+      });
+      app.$store.commit('set', {
+        name: 'cursorHoverColor',
+        value: '#2af8eb'
+      });
+      app.$store.commit('set', {
+        name: 'cursorLongAnimate',
+        value: false
+      });      
+      app.$store.commit('set', {
+        name: 'scroll',
+        value: false
+      });      
+      app.$store.commit('set', {
+        name: 'cursorLongAnimatePermit',
+        value: false
+      });
+      app.$store.commit('about', {
+        name : 'titleAnimate',
+        value : false
+      });
+      app.$store.commit('about', {
+        name : 'enterDone',
+        value : false
+      });      
+      TweenMax.set(document.querySelectorAll('.about__title li:nth-child(odd) span'), {x: '-100vw'});
+      TweenMax.set(document.querySelectorAll('.about__title li:nth-child(even) span'), {x: '100vw'});
+      TweenMax.set(document.querySelectorAll('.about__team_list .item--pfoto'), {height: '0%'});
+      //TweenMax.set(document.querySelectorAll('.about__profile'), {visibility: 'hidden'});
+      TweenMax.set(document.querySelectorAll('.about__start_text'), {visibility: 'hidden'});      
+      TweenMax.set(document.querySelectorAll('#app-team .wld span'), {y : -13});
+      TweenMax.set('.about__bar', {height: '0%'});
+      TweenMax.set('.about__bar i', {x: '100%'});
+      TweenMax.set('#app-team .back', {scale: 0});
+      //TweenMax.set(document.querySelectorAll('#app-team .wld span'), {css : {'letter-spacing': '20px', 'transition-timing-function' : 'cubic-bezier(0.505, 0.000, 0.735, 0.425)'}})
+      
+      
+
+      TweenMax.to(document.querySelectorAll('.go-tonext span, .dda span'), 0.4, {y : 13, delay : 0.4});
+      // TweenMax.to(document.querySelectorAll('#app-team .wld span'), 0.4, {y : 0, delay : 0.4, onComplete: function(){
+      //   TweenMax.set(document.querySelectorAll('#app-team .wld span'), {css : {'letter-spacing': '0px', 'transition-timing-function': 'cubic-bezier(0.23, 1, 0.32, 1)'}});
+      // }});
+      TweenMax.set('.main-bg', {backgroundColor : '#191919', height : '100%', width : 0, x : 0});      
+      TweenMax.to('.preloader span', 1.3, {y : 50});            
+      TweenMax.to('.main-bg', 0.7, {width : '100%', ease: Power3.easeIn});
+      TweenMax.to('.main-bg', 0.7, {css : {transform : 'translateX(-50vw)'}, ease: Power3.easeIn});
+      TweenMax.to(document.querySelectorAll('.go-tonext span'), 0.4, {y : 13, delay : 0.4});      
+      TweenMax.to('.preloader', 0.7, {backgroundColor : '#fff', ease: Power3.easeIn, onComplete : function(){
+        TweenMax.to('.g-pager i', 1, { width: '0px', ease: Power4.easeInOut, onComplete(){
+          TweenMax.to('.g-pager div', 0.4, {x : '-100%'});  
+        }});
+        app.$store.commit('set', {
+          name: 'pager',
+          value: '02'
+        });
+        new TimelineMax().to('#logo .gaps', 0.3, {opacity: 0})
+        .to('#logo .logo1', 0.3, {morphSVG: '#logo .logo2'}, 'uno')
+        .to('#logo .number1', 0.3, {morphSVG: '#logo .number2'}, 'uno')
+        .set('header .logo', {width: 50}, 'uno');
+        
+        TweenMax.to('.progress-ring__circle', 0.6, {strokeDashoffset : 0, ease: Power2.easeIn, onComplete : function(){
+          TweenMax.set([document.querySelectorAll('.dda span'), document.querySelectorAll('.go-tonext span')], {css : {'transition-duration' : '0.9s'}});
+          TweenMax.to('.progress-ring__circle', 0.2, {stroke : app.$store.state.cursorColor});
+          TweenMax.to('.cursor-ring', 0.2, {scale : 1});
+          TweenMax.to(document.querySelectorAll('.cursor-ring__arrow'), 0.7, {opacity: 1});
+        }});
+        TweenMax.set('#app', {backgroundColor : '#191919'});
+        TweenMax.set('.main-bg', {backgroundColor : 'transparent', width : 0, height : 0});        
+        TweenMax.to('.preloader', 0.7, {height: 0, y : 0, ease: Power3.easeOut});
+        
+        app.$store.commit('about', {
+          name : 'titleAnimate',
+          value : true
+        });
+        new TimelineMax().to(document.querySelectorAll('.about__title li:nth-child(odd) span'), 1.5, {x: '0vw', ease: Power4.easeOut}, 'title')
+        .to(document.querySelectorAll('.about__title li:nth-child(even) span'), 1.5, {x: '0vw', ease: Power4.easeOut}, 'title')
+        .to(document.querySelectorAll('.about__team_list .item--pfoto'), 0.7, {height: '100%', ease: Power4.easeInOut}, 'title+=1')
+        .set(document.querySelectorAll('.about__start_text'), {visibility: 'visible'})      
+        .staggerFrom(document.querySelectorAll('.about__start_text div'), 0.7, {opacity:0, rotationX:-80, force3D:true, transformOrigin:"top center -50", ease: Power4.easeOut}, 0.02)
+        .addCallback(function(){
+          setTimeout(function(){
+            const el = document.querySelector('.about__profile .photo');      
+            const imgs = Array.from(el.querySelectorAll('img'));          
+            hoverEffect.init({
+              parent: el,
+              startImage: el.dataset.startimage,
+              intensity: el.dataset.intensity || undefined,
+              speedIn: el.dataset.speedin || undefined,
+              speedOut: el.dataset.speedout || undefined,
+              easing: el.dataset.easing || undefined,
+              hover: el.dataset.hover || undefined,
+              images: imgs,          
+              displacementImage: el.dataset.displacement
+            });
+            app.$store.commit('about', {
+              name: 'enterDone',
+              value: true
+            });
+            app.$store.commit('set', {
+              name : 'transitionPage',
+              value : false
+            });          
+          }, 200);          
+          // TweenMax.to('.g-pager div', 0.4, {x : '0%', onComplete: function(){
+          //   TweenMax.to('.g-pager i', 1, { width: '60px', ease: Power4.easeInOut});
+          // }});          
+          TweenMax.to('.about__bar', 0.7, {height: '90px', onComplete: function(){
+            TweenMax.to('.about__bar i', 0.7, {x: '0%', ease: Power4.easeIn});
+          }});
+          TweenMax.to('.logo', 0.4, {y : 0});
+          TweenMax.to('.follow-us_title span', 0.4, {y : 35, onComplete : function(){
+            TweenMax.to('#app-team .back', 0.4, {scale: 1});
+            TweenMax.to('header .menu span', 0.3, {y : 0});
+            TweenMax.staggerTo(document.querySelectorAll('header nav > div'), 0.3, {y : 0}, 0.1);
+            TweenMax.staggerTo(['.follow-us li.be', '.follow-us li.dr', '.follow-us li.fb', '.follow-us li.ig'], 0.3, {y : 35}, 0.1);
+            app.$store.commit('set', {
+              name : 'firstPage',
+              value : false
+            });
+          }});          
+        }, '-=0.5')
+      }}); 
     // const el = document.querySelector('.about__profile .photo');      
     // const imgs = Array.from(el.querySelectorAll('img'));
     // setTimeout(function(){
@@ -199,68 +328,68 @@ export default {
         {
           name: 'Alex',
           skill: 'UI design lead',
-          preview: './img/about/alex_preview.jpg',
-          photo: './img/about/alex.jpg'          
+          preview: '/img/about/alex_preview.jpg',
+          photo: '/img/about/alex.jpg'          
         },
         {
           name: 'Dmitry',
           skill: 'Lead front-end developer',
-          preview: './img/about/dmitriy_preview.jpg',
-          photo: './img/about/dmitriy.jpg'
+          preview: '/img/about/dmitriy_preview.jpg',
+          photo: '/img/about/dmitriy.jpg'
         },
         {
           name: 'Jane',
           skill: 'UX designer',
-          preview: './img/about/jane_preview.jpg',
-          photo: './img/about/jane.jpg'          
+          preview: '/img/about/jane_preview.jpg',
+          photo: '/img/about/jane.jpg'          
         },
         {
           name: 'Kristina',
           skill: 'Project manager',
-          preview: './img/about/kristina_preview.jpg',
-          photo: './img/about/kristina.jpg'
+          preview: '/img/about/kristina_preview.jpg',
+          photo: '/img/about/kristina.jpg'
         },
         {
           name: 'Yuriy',
           skill: 'CBDO',
-          preview: './img/about/lazey_preview.jpg',
-          photo: './img/about/lazey.jpg'
+          preview: '/img/about/lazey_preview.jpg',
+          photo: '/img/about/lazey.jpg'
         },
         {
           name: 'Lusy',
           skill: 'UI/UX designer',
-          preview: './img/about/lusy_preview.jpg',
-          photo: './img/about/lusy.jpg'
+          preview: '/img/about/lusy_preview.jpg',
+          photo: '/img/about/lusy.jpg'
         },
         {
           name: 'Nina',
           skill: 'Art Director',
-          preview: './img/about/nina_preview.jpg',
-          photo: './img/about/nina.jpg'
+          preview: '/img/about/nina_preview.jpg',
+          photo: '/img/about/nina.jpg'
         },
         {
           name: 'Roman',
           skill: 'Front-end developer',
-          preview: './img/about/roman_preview.jpg',
-          photo: './img/about/roman.jpg'
+          preview: '/img/about/roman_preview.jpg',
+          photo: '/img/about/roman.jpg'
         },
         {
           name: 'Sergey',
           skill: 'Interactive Art Director',
-          preview: './img/about/sergey_preview.jpg',
-          photo: './img/about/sergey.jpg'
+          preview: '/img/about/sergey_preview.jpg',
+          photo: '/img/about/sergey.jpg'
         },
         {
           name: 'Tetiana',
           skill: 'QA lead',
-          preview: './img/about/tanya_preview.jpg',
-          photo: './img/about/tanya.jpg'
+          preview: '/img/about/tanya_preview.jpg',
+          photo: '/img/about/tanya.jpg'
         }        
         // {
         //   name: 'Viktor',
         //   skill: 'PMO/CFO',
-        //   preview: './img/about/viktor_preview.jpg',
-        //   photo: './img/about/viktor.jpg'
+        //   preview: '/img/about/viktor_preview.jpg',
+        //   photo: '/img/about/viktor.jpg'
         // }
       ]
     }

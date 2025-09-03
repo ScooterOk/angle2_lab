@@ -484,6 +484,175 @@ export default {
       images: imgs2,
       displacementImage: el2.dataset.displacement,
     });
+    app.$store.commit("set", {
+        name: "page",
+        value: "4peak",
+      });
+      app.$store.commit("set", {
+        name: "cursorColor",
+        value: "#b6b6b6",
+      });
+      app.$store.commit("set", {
+        name: "cursorHoverColor",
+        value: "#90f8eb",
+      });
+      app.$store.commit("set", {
+        name: "cursorLongAnimate",
+        value: false,
+      });
+      app.$store.commit("set", {
+        name: "cursorLongAnimatePermit",
+        value: false,
+      });
+      app.$store.commit("set", {
+        name: "scroll",
+        value: false,
+      });
+      TweenMax.set(".main-bg", {
+        backgroundColor: "#fff",
+        height: "100%",
+        width: 0,
+        x: 0,
+      });
+      TweenMax.set(".case__head", { x: "-100%" });
+      TweenMax.set(document.querySelectorAll("#app-projects-4peak .leave"), {
+        opacity: 0,
+      });
+      TweenMax.set(
+        document.querySelectorAll(".case__head .case__head_title span"),
+        { x: "-100vw" }
+      );
+      TweenMax.set(
+        document.querySelectorAll(".case__head_characteristic span"),
+        { y: "110%" }
+      );
+      TweenMax.set(".case__head_characteristic .link .background", {
+        width: "0%",
+      });
+      TweenMax.set(".allprojects a span", { y: "-100%" });
+      TweenMax.set(".allprojects i", { scale: 0 });
+      TweenMax.to(".preloader span", 1.3, { y: 50 });
+      TweenMax.to(".main-bg", 0.7, { width: "100%", ease: Power3.easeIn });
+      TweenMax.to(".main-bg", 0.7, {
+        css: { transform: "translateX(-50vw)" },
+        ease: Power3.easeIn,
+      });
+      TweenMax.to(
+        document.querySelectorAll(".go-tonext span, .dda span"),
+        0.4,
+        { y: 13, delay: 0.4 }
+      );
+      new TimelineMax()
+        .to("#logo .gaps", 0.3, { opacity: 0 })
+        .to("#logo .logo1", 0.3, { morphSVG: "#logo .logo2" }, "uno")
+        .to("#logo .number1", 0.3, { morphSVG: "#logo .number2" }, "uno")
+        .set("header .logo", { width: 50 }, "uno");
+      TweenMax.to(".preloader", 0.7, {
+        backgroundColor: "#1d1d1d",
+        ease: Power3.easeIn,
+        onComplete: function () {
+          TweenMax.set("#app", { backgroundColor: "#fff" });
+          TweenMax.set(".main-bg", {
+            backgroundColor: "transparent",
+            width: 0,
+            height: 0,
+          });
+          TweenMax.to(".preloader", 0.7, {
+            height: 0,
+            y: 0,
+            ease: Power3.easeOut,
+            onComplete: function () {
+              TweenMax.to(".g-pager i", 1, {
+                width: "0px",
+                ease: Power4.easeInOut,
+                onComplete() {
+                  TweenMax.to(".g-pager div", 0.4, { x: "-100%" });
+                },
+              });
+              TweenMax.to(".logo", 0.4, { y: 0 });
+              TweenMax.to(".follow-us_title span", 0.4, {
+                y: 35,
+                onComplete: function () {
+                  TweenMax.to("header .menu span", 0.3, { y: 0 });
+                  TweenMax.staggerTo(
+                    document.querySelectorAll("header nav > div"),
+                    0.3,
+                    { y: 0 },
+                    0.1
+                  );
+                  TweenMax.staggerTo(
+                    [
+                      ".follow-us li.be",
+                      ".follow-us li.dr",
+                      ".follow-us li.fb",
+                      ".follow-us li.ig",
+                    ],
+                    0.3,
+                    { y: 35 },
+                    0.1
+                  );
+                  TweenMax.to(
+                    document.querySelectorAll("#app-projects-4peak .leave"),
+                    1.4,
+                    { opacity: 1 }
+                  );
+                  app.$store.commit("set", {
+                    name: "firstPage",
+                    value: false,
+                  });
+                  app.$store.commit("set", {
+                    name: "transitionPage",
+                    value: false,
+                  });
+                },
+              });
+            },
+          });
+
+          new TimelineMax({ delay: 0.6 })
+            .to(".case__head", 0.8, { x: "0%", ease: Power3.easeInOut })
+            .to(
+              document.querySelectorAll(".case__head .case__head_title span"),
+              0.7,
+              {
+                x: "0%",
+                ease: Power4.easeOut,
+                onComplete: function () {
+                  hoverEffect.start();
+                },
+              }
+            )
+            .to(".allprojects a span", 0.4, { y: "0%" }, "end")
+            .to(".allprojects i", 0.4, { scale: 1 }, "end")
+            .staggerTo(
+              ".case__head_characteristic h4 span",
+              0.4,
+              { y: "0%" },
+              0.2,
+              "end"
+            )
+            .staggerTo(
+              ".case__head_characteristic h5 span",
+              0.4,
+              { y: "0%" },
+              0.2,
+              "end"
+            )
+            .set(".scrollbar-track-y", { opacity: 1 })
+            .to(".case__head_characteristic .link .background", 0.4, {
+              width: "100%",
+              ease: Power3.easeInOut,
+            })
+            .to(
+              ".case__head_characteristic .link span",
+              0.4,
+              { y: "0%" },
+              "+=0.3"
+            );
+        },
+      });
+
+      
   },
 
   data: function () {

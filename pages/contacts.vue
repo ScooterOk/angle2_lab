@@ -175,7 +175,154 @@
 <script>
 import axios from 'axios';
 export default {
-  mounted: function() {},
+  mounted: function() {
+    const app = this;      
+      //var app = this.$store.state.pageModule;
+
+      app.$store.commit("set", {
+        name: "page",
+        value: "contacts"
+      });
+      app.$store.commit("set", {
+        name: "cursorColor",
+        value: "#b6b6b6"
+      });
+      app.$store.commit("set", {
+        name: "cursorHoverColor",
+        value: "#2af8eb"
+      });
+      app.$store.commit('set', {
+        name: 'cursorLongAnimatePermit',
+        value: false
+      });
+      if(app.$store.state.firstPage){
+        /*============= First render ========== */
+        app.$store.commit('set', {
+          name: 'pager',
+          value: '05'
+        });
+        new TimelineMax().to(document.querySelectorAll('.dda span'), 0.4, {y: function(){
+          if(app.$store.state.mobile == 'mobile'){
+            return 13;
+          }else{
+            return 0;
+          }
+        }})
+        .to('#logo .gaps', 0.3, {opacity: 0})
+        .to('#logo .logo1', 0.3, {morphSVG: '#logo .logo2'}, 'uno')
+        .to('#logo .number1', 0.3, {morphSVG: '#logo .number2'}, 'uno');
+        TweenMax.set(document.querySelectorAll('.dda span'), {css : {'letter-spacing': '0px', 'transition-timing-function': 'cubic-bezier(0.23, 1, 0.32, 1)'}});
+        TweenMax.to('.preloader span', 1.3, {y : 50});                
+        TweenMax.set('#app', {backgroundColor : '#ffffff'});
+        TweenMax.set('.main-bg', {backgroundColor : 'transparent', width : 0, height : 0});        
+        //TweenMax.to(document.querySelectorAll(['.dda span']), 0.4, {y : 13});
+        TweenMax.to(document.querySelectorAll('.go-tonext span'), 0.4, {y : 13});
+        TweenMax.to('.preloader', 1.3, {height: 0, y : 0, ease: Power3.easeOut, onComplete : function(){
+          TweenMax.to('.g-pager div', 0.4, {x : '0%', onComplete: function(){
+            TweenMax.to('.g-pager i', 1, { width: '60px', ease: Power4.easeInOut});
+          }});
+          TweenMax.to('.logo', 0.4, {y : 0});
+          TweenMax.to('.follow-us_title span', 0.4, {y : 0, onComplete : function(){
+            TweenMax.to('header .menu span', 0.3, {y : 0});
+            TweenMax.staggerTo(document.querySelectorAll('header nav > div'), 0.3, {y : 0}, 0.1);
+            TweenMax.staggerTo(['.follow-us li.be', '.follow-us li.dr', '.follow-us li.fb', '.follow-us li.ig'], 0.3, {y : 0}, 0.1);  
+            app.$store.commit('set', {
+              name : 'transitionPage',
+              value : false
+            });
+            app.$store.commit('set', {
+              name : 'scroll',
+              value : true
+            });
+            app.$store.commit('set', {
+              name : 'firstPage',
+              value : false
+            });
+          }});
+        }});              
+        TweenMax.set(document.querySelectorAll(['.contacts__wrapper_side-list h2 span', '.contacts__wrapper_side-info a', '.contacts__from-send button span']), {y : '100%'});
+        TweenMax.set(document.querySelectorAll(['.contacts__from-name label', '.contacts__from-mail label', '.contacts__from-message label']), {opacity : 0});
+        var tl = document.querySelector('.contacts__title li[data-type="title"] h1 span');
+        var th = document.querySelector('.contacts__title li[data-type="thankyou"] h1 span');
+        TweenMax.set(document.querySelectorAll('.contacts__title li[data-type="thankyou"] h1 span'), {x : -(th.clientWidth+100), force3D: true});
+        TweenMax.set(document.querySelectorAll('.contacts__title li[data-type="thankyou"]'), {visibility : 'hidden'});
+        TweenMax.staggerTo(document.querySelectorAll(['.contacts__wrapper_side-list li h2 span', '.contacts__wrapper_side-info a']), 0.3, {y : '0%', ease: Power3.easeOut, delay : 1}, 0.1, formInit);
+        function formInit(){
+          TweenMax.to(document.querySelectorAll(['.contacts__from-name i', '.contacts__from-mail i', '.contacts__from-message i']), 0.5, {width : '100%', onComplete : function(){
+            TweenMax.to(document.querySelectorAll(['.contacts__from-name label', '.contacts__from-mail label', '.contacts__from-message label']), 0.5, {opacity : 1, onComplete : function(){
+
+            }});            
+          }})
+          TweenMax.to('.contacts__from-send i', 0.5, {width : '100%', onComplete : function(){
+            TweenMax.to('.contacts__from-send button span', 0.5, {y : '0%'});
+          }});
+        }
+        TweenMax.staggerFromTo(document.querySelectorAll('.contacts__title li[data-type="title"] .left h1 span'), 1.5, {x : -(tl.clientWidth+100)}, {x : 0, ease: Power4.easeOut, force3D: true}, 0.1);
+        TweenMax.staggerFromTo(document.querySelectorAll('.contacts__title li[data-type="title"] .right h1 span'), 1.5, {x : -(tl.clientWidth+100)}, {x : 0, ease: Power4.easeOut, force3D: true}, 0.1);
+      }else{
+        /*============= Transition render ========== */        
+        TweenMax.set('.main-bg', {backgroundColor : '#ffffff', height : '100%', width : 0, x : 0});
+        if(app.$store.state.mobile == 'mobile'){
+          TweenMax.set('.follow-us_title span', {y: 10});
+          TweenMax.set(document.querySelectorAll('.follow-us li.be, .follow-us li.dr, .follow-us li.fb, .follow-us li.ig'), {y: 20});          
+        }
+        var tl = document.querySelector('.contacts__title li[data-type="title"] h1 span');
+        var th = document.querySelector('.contacts__title li[data-type="thankyou"] h1 span');
+        TweenMax.set(document.querySelectorAll('.contacts__title li[data-type="title"] h1 span'), {x : -(tl.clientWidth+100), force3D: true});
+        TweenMax.set(document.querySelectorAll('.contacts__title li[data-type="thankyou"] h1 span'), {x : -(th.clientWidth+100), force3D: true});
+        TweenMax.set(document.querySelectorAll('.contacts__title li[data-type="thankyou"]'), {visibility : 'hidden'});
+        TweenMax.set(document.querySelectorAll(['.contacts__wrapper_side-list h2 span', '.contacts__wrapper_side-info a', '.contacts__from-send button span']), {y : '100%'});
+        TweenMax.set(document.querySelectorAll(['.contacts__from-name label', '.contacts__from-mail label', '.contacts__from-message label']), {opacity : 0});        
+        TweenMax.to('.main-bg', 0.7, {width : '100%', ease: Power3.easeIn});
+        TweenMax.to('.main-bg', 0.7, {css : {transform : 'translateX(-50vw)'}, ease: Power3.easeIn});
+        TweenMax.to(document.querySelectorAll('.dda span'), 0.4, {y: function(){
+          if(app.$store.state.mobile == 'mobile'){
+            return 13;
+          }else{
+            return 0;
+          }
+        }})
+        TweenMax.to('.preloader', 0.7, {backgroundColor : '#000000', ease: Power3.easeIn, onComplete : function(){
+            TweenMax.set('#app', {backgroundColor : '#ffffff'});
+            TweenMax.set('.main-bg', {backgroundColor : 'transparent', width : 0, height : 0});
+            //TweenMax.to(document.querySelectorAll('.dda span'), 0.4, {y : 13});
+            TweenMax.to(document.querySelectorAll('.go-tonext span'), 0.4, {y : 13});
+            TweenMax.set(document.querySelectorAll('.dda span'), {css : {'letter-spacing': '0px', 'transition-timing-function': 'cubic-bezier(0.23, 1, 0.32, 1)'}});
+            TweenMax.staggerTo(document.querySelectorAll('header nav > div'), 0.3, {y : 0}, 0.1);
+            TweenMax.to('.preloader', 0.7, {height: 0, y : 0, ease: Power3.easeOut});
+            app.$store.commit('set', {
+              name: 'pager',
+              value: '05'
+            });
+            new TimelineMax().to('#logo .gaps', 0.3, {opacity: 0})
+            .to('#logo .logo1', 0.3, {morphSVG: '#logo .logo2'}, 'uno')
+            .to('#logo .number1', 0.3, {morphSVG: '#logo .number2'}, 'uno');            
+            
+            app.$store.commit('set', {
+              name : 'transitionPage',
+              value : false
+            });
+            TweenMax.staggerTo(document.querySelectorAll(['.contacts__wrapper_side-list li h2 span', '.contacts__wrapper_side-info a']), 0.3, {y : '0%', ease: Power3.easeOut, delay : 1}, 0.1, formInit);
+        function formInit(){
+          TweenMax.to(document.querySelectorAll(['.contacts__from-name i', '.contacts__from-mail i', '.contacts__from-message i']), 0.5, {width : '100%', onComplete : function(){
+            TweenMax.to(document.querySelectorAll(['.contacts__from-name label', '.contacts__from-mail label', '.contacts__from-message label']), 0.5, {opacity : 1, onComplete : function(){
+
+            }});            
+          }})
+          TweenMax.to('.contacts__from-send i', 0.5, {width : '100%', onComplete : function(){
+            TweenMax.to('.contacts__from-send button span', 0.5, {y : '0%'});
+          }});
+          if(app.$store.state.mobile == 'mobile'){              
+            TweenMax.to('.follow-us_title span', 0.4, {y : 0, onComplete : function(){              
+              TweenMax.staggerTo(['.follow-us li.be', '.follow-us li.dr', '.follow-us li.fb', '.follow-us li.ig'], 0.3, {y : 0}, 0.1);
+            }});
+          }
+        }
+        TweenMax.staggerFromTo(document.querySelectorAll('.contacts__title li[data-type="title"] .left h1 span'), 1.5, {x : -(tl.clientWidth+100)}, {x : 0, ease: Power4.easeOut}, 0.1);
+        TweenMax.staggerFromTo(document.querySelectorAll('.contacts__title li[data-type="title"] .right h1 span'), 1.5, {x : -(tl.clientWidth+100)}, {x : 0, ease: Power4.easeOut}, 0.1);
+          }});          
+      }
+  },
   data: function() {
     return {
       title: "Let's meet",
